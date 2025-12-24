@@ -11,6 +11,7 @@ from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage
 from langchain_experimental.tools import PythonREPLTool
 
+from config import settings
 from utils.file_util import FileUtil
 
 
@@ -54,7 +55,7 @@ def analyze_screenshot_and_generate_code(fs: FileUtil) -> str:
     screenshot_b64 = fs.read_image(SCREENSHOT_FILE, add_header=True)
 
     # 初始化视觉模型
-    model = init_chat_model(model="google_vertexai:gemini-2.5-flash")
+    model = init_chat_model(model=settings.models.chat_model)
 
     # 构建分析和代码生成提示
     prompt = """你是一个 pyautogui 自动化专家。请分析这张 Windows 桌面截图，然后生成一个完整的 Python 脚本来完成以下任务：
