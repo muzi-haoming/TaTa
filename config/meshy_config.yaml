@@ -1,0 +1,92 @@
+# Meshy AI 3D Generation Service Configuration
+# =============================================
+# 文档: https://docs.meshy.ai/zh
+
+# API 端点配置
+api:
+  base_url: "https://api.meshy.ai/openapi"
+  endpoints:
+    text_to_3d: "/v2/text-to-3d"
+    image_to_3d: "/v1/image-to-3d"
+    multi_image_to_3d: "/v1/multi-image-to-3d"
+    remesh: "/v1/remesh"
+    rigging: "/v1/rigging"
+    animations: "/v1/animations"
+    retexture: "/v1/retexture"
+
+# Text-to-3D 默认参数
+text_to_3d:
+  preview:
+    art_style: "realistic"
+    ai_model: "latest"
+    topology: "quad"
+    target_polycount: 50000
+    should_remesh: true
+    symmetry_mode: "auto"
+    pose_mode: "t-pose"
+    moderation: false
+    max_prompt_length: 600
+  refine:
+    enable_pbr: false
+    max_texture_prompt_length: 600
+    moderation: false
+
+# Image-to-3D 默认参数
+image_to_3d:
+  ai_model: "latest"
+  enable_pbr: false
+  topology: "quad"
+  target_polycount: 50000
+  symmetry_mode: "auto"
+  should_remesh: true
+  save_pre_remeshed_model: false
+  should_texture: true
+  pose_mode: "t-pose"
+  moderation: false
+  max_texture_prompt_length: 600
+
+# Multi-Image-to-3D 默认参数
+multi_image_to_3d:
+  ai_model: "meshy-5"  # latest (Meshy-6) 不支持多视图
+  enable_pbr: false
+  topology: "quad"
+  target_polycount: 50000
+  symmetry_mode: "auto"
+  should_remesh: true
+  save_pre_remeshed_model: false
+  should_texture: true
+  pose_mode: "t-pose"
+  moderation: false
+  max_texture_prompt_length: 600
+  min_images: 1
+  max_images: 4
+
+# Remesh 默认参数
+remesh:
+  target_formats:
+    - "glb"
+  topology: "quad"
+  target_polycount: 50000
+  resize_height: 0
+  origin_at: "bottom"
+  convert_format_only: false
+
+# Rigging 默认参数
+rigging:
+  height_meters: 1.6
+
+# Retexture 默认参数
+retexture:
+  ai_model: "latest"
+  enable_original_uv: true
+  enable_pbr: false
+
+# 任务列表默认参数
+task_list:
+  default_page_size: 10
+  max_page_size: 50
+  default_sort_by: "-created_at"
+
+# 下载配置
+download:
+  chunk_size: 8192

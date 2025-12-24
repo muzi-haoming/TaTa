@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tata-project"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "959"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "streamlit",
+    "google-cloud-aiplatform",
+    "vertexai",
+    "langchain-google-genai",
+    "langchain",
+    "langchain-core",
+    "langchain-community",
+    "chromadb",
+    "langchain-chroma",
+    "langchain-text-splitters",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pytest-asyncio",
+    "mypy",
+    "black",
+    "ruff",
+]
+
+#[project.scripts]
+#tata-ingest = "ingest:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["config*", "core*", "middlewares*", "tools*", "utils*", "ui*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=. --cov-report=term-missing"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "I", "N"]
+ignore = ["E501"]
