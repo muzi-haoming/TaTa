@@ -215,6 +215,17 @@ async def run_ai_control_workflow_async(target_app: str = "weixin"):
     return await asyncio.to_thread(run_ai_control_workflow, target_app)
 
 
+# ==================== pytest 测试函数 ====================
+
+def test_ai_control_open_weixin():
+    """
+    测试 AI 控制打开微信
+
+    执行完整流程：截图 -> AI分析 -> 生成代码 -> REPL执行
+    """
+    run_ai_control_workflow("weixin")
+
+
 # ==================== 入口 ====================
 
 if __name__ == "__main__":
