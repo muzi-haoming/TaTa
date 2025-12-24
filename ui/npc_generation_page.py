@@ -449,6 +449,10 @@ def handle_workflow_mode(prompt: str):
         }
 
         try:
+            # 先显示加载状态，避免初始化工作流时界面卡顿
+            with placeholders["status"].container():
+                render_loading_status("准备中")
+
             workflow = get_workflow()
 
             # 创建线程安全的进度队列
@@ -460,7 +464,7 @@ def handle_workflow_mode(prompt: str):
 
             GenerateNpcWorkflow.model_progress_callback = model_progress_callback
 
-            # 初始状态
+            # 更新状态为开始检索
             with placeholders["status"].container():
                 render_loading_status("检索世界观资料")
 
