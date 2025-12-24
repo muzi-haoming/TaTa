@@ -141,26 +141,58 @@ pyautogui.PAUSE = 0.5
 
 def execute_with_repl(fs: FileUtil) -> str:
     """
-    使用 PythonREPLTool 执行代码
+    执行生成的自动化脚本
+
+    优先使用 subprocess 直接运行脚本文件（更可靠）
+    备选使用 exec() 在当前进程执行
 
     Returns:
         执行结果
     """
-    repl = PythonREPLTool()
+    import subprocess
+    import sys
 
-    # 读取保存的脚本
-    script_content = fs.read_text(SCRIPT_FILE)
+    script_path = fs.get_abs_path(SCRIPT_FILE)
 
     print("[执行] 开始运行自动化脚本...")
+    print(f"[执行] 脚本路径: {script_path}")
     print("-" * 50)
 
-    # 执行代码
-    result = repl.run(script_content)
+    try:
+        # 方法1: 使用 subprocess 运行脚本（推荐，更可靠）
+        result = subprocess.run(
+            [sys.executable, script_path],
+            capture_output=True,
+            text=True,
+            timeout=60  # 60秒超时
+        )
 
-    print("-" * 50)
-    print(f"[结果] {result}")
+        print(f"[stdout]\n{result.stdout}")
+        if result.stderr:
+            print(f"[stderr]\n{result.stderr}")
 
-    return result
+        print("-" * 50)
+        print(f"[结果] 返回码: {result.returncode}")
+
+        return result.stdout
+
+    except subprocess.TimeoutExpired:
+        print("[警告] 脚本执行超时（60秒）")
+        return "执行超时"
+
+    except Exception as e:
+        print(f"[错误] subprocess 执行失败: {e}")
+
+        # 方法2: 备选 - 使用 exec() 在当前进程执行
+        print("[备选] 尝试使用 exec() 执行...")
+        script_content = fs.read_text(SCRIPT_FILE)
+
+        try:
+            exec(script_content, {"__name__": "__main__"})
+            return "exec() 执行完成"
+        except Exception as exec_error:
+            print(f"[错误] exec() 也失败: {exec_error}")
+            raise
 
 
 # ==================== 主流程 ====================
