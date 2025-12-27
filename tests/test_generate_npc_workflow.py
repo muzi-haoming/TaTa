@@ -1,9 +1,7 @@
 import asyncio
 import unittest
 
-from services import meshy_service
-from utils import FileUtil, logger
-from workflows.generate_npc_workflow import GenerateNpcWorkflow
+from workflows import GenerateNpcWorkflow
 
 
 class MyTestCase(unittest.TestCase):

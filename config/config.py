@@ -89,6 +89,7 @@ class LoggingConfig(BaseModel):
 class PathsConfig(BaseModel):
     """文件路径配置"""
     npc_generation_data: str = "data/npc_generation"
+    ai_auto_control_data: str = "data/ai_auto_control"
     worldview_file: str = "worldview.txt"
     model_style_file: str = "model_style.txt"
 

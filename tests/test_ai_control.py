@@ -6,12 +6,16 @@ AI 控制鼠标测试
 import asyncio
 import base64
 from pathlib import Path
+from venv import create
 
+from langchain.agents import create_agent
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage
+from langchain_experimental.graph_transformers.llm import system_prompt
 from langchain_experimental.tools import PythonREPLTool
 
 from config import settings
+from tools import ai_auto_control_agent_tools
 from utils.file_util import FileUtil
 
 
@@ -250,13 +254,30 @@ async def run_ai_control_workflow_async(target_app: str = "weixin"):
 
 # ==================== pytest 测试函数 ====================
 
-def test_ai_control_open_weixin():
-    """
-    测试 AI 控制打开微信
+# def test_ai_control_open_weixin():
+#     """
+#     测试 AI 控制打开微信
+#
+#     执行完整流程：截图 -> AI分析 -> 生成代码 -> REPL执行
+#     """
+#     run_ai_control_workflow("weixin")
 
-    执行完整流程：截图 -> AI分析 -> 生成代码 -> REPL执行
-    """
-    run_ai_control_workflow("weixin")
+
+def test_ai_control():
+    system_prompt = "你是一个专业的3D建模师,熟练使用Blender,你可以通过[截图]->[分析]->[键盘和鼠标操作]->[截图]->[验证结果]的循环的流程完成用户所说的任务"
+    agent = create_agent(
+        model=init_chat_model(settings.models.chat_model),
+        tools=ai_auto_control_agent_tools,
+        system_prompt=system_prompt
+    )
+
+    response = asyncio.run(agent.ainvoke({
+        "messages": [
+            HumanMessage(content="打开QQ音乐,然后点击播放按键")
+        ]
+    }))
+
+    print(response)
 
 
 # ==================== 入口 ====================

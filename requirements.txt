@@ -1,3 +1,5 @@
+pillow
+pyperclip
 pyautogui
 aiohttp
 aiofiles

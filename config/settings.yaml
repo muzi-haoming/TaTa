@@ -55,6 +55,7 @@ logging:
 # 数据目录配置
 paths:
   npc_generation_data: "data/npc_generation"
+  ai_auto_control_data: "data/ai_auto_control"
   worldview_file: "worldview.txt"
   model_style_file: "model_style.txt"
 

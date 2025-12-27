@@ -26,3 +26,7 @@ class ImageResponseStructure(BaseModel):
 
 class ImageGeneratePromptResponseStructure(BaseModel):
     prompt: str = Field(description="提示词")
+
+
+class PlanResponseStructure(BaseModel):
+    plan_list: list[str] = Field(description="方案的步骤列表")
