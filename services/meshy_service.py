@@ -39,8 +39,8 @@ class MeshyService:
     def __init__(self):
         if not self._initialized:
             # API密钥从环境变量获取，如未设置则使用测试API密钥
-            # self.api_key = "msy_dummy_api_key_for_test_mode_12345678"
-            self.api_key = os.environ.get("MESHY_API_KEY", "msy_dummy_api_key_for_test_mode_12345678")
+            self.api_key = "msy_dummy_api_key_for_test_mode_12345678"
+            # self.api_key = os.environ.get("MESHY_API_KEY", "msy_dummy_api_key_for_test_mode_12345678")
             self.headers = {
                 "Authorization": f"Bearer {self.api_key}",
                 "Content-Type": "application/json"

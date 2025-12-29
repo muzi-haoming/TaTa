@@ -309,9 +309,9 @@ def format_final_result(state: dict) -> str:
     Returns:
         格式化的结果字符串
     """
-    npc_json_path = state.get("npc_json_path", "")
-    npc_image_path = state.get("npc_image_path", "")
-    npc_model_path = state.get("npc_model_path", "")
+    npc_json_path = state["npc_json_path"]
+    npc_image_path = state["npc_image_path"]
+    npc_model_path = state["npc_model_path"]
 
     result_parts = ["#### 📁 生成的文件\n"]
     if npc_json_path:
@@ -684,21 +684,21 @@ def main():
 
                     # 更新标题为完成状态
                     if json_displayed:
-                        json_result_placeholder.markdown("### ✨ NPC角色生成完成！\n" + format_npc_json_result(final_state.get("npc_json", {})))
+                        json_result_placeholder.markdown("### ✨ NPC角色生成完成！\n" + format_npc_json_result(final_state["npc_json"]))
 
                     # 显示最终文件路径
                     final_result_placeholder.markdown(format_final_result(final_state))
 
                     # 保存完整消息到历史
                     full_content = "### ✨ NPC角色生成完成！\n\n"
-                    full_content += format_npc_json_result(final_state.get("npc_json", {}))
+                    full_content += format_npc_json_result(final_state["npc_json"])
                     full_content += "\n\n"
                     full_content += format_final_result(final_state)
 
                     st.session_state.messages.append({
                         "role": "assistant",
                         "content": full_content,
-                        "image_base64": final_state.get("npc_image_base64")
+                        "image_base64": final_state["npc_image_base64"]
                     })
 
                 except Exception as e:

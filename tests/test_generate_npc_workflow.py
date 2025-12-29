@@ -7,9 +7,29 @@ from workflows.generate_npc_workflow import GenerateNpcWorkflow
 
 
 class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        workflow = GenerateNpcWorkflow()
-        asyncio.run(workflow.ainvoke("一个照顾花田的鼓隆族小孩,不允许任何人触碰"))
+    def setUp(self):
+        self._prompt = "一个照顾花田的利特族人,不允许任何人触碰"
+        self._workflow = GenerateNpcWorkflow()
+
+    async def generate_npc_work_flow(self):
+        interrupt_info = await self._workflow.ainvoke(self._prompt)
+        number = input(f"\n中断信息: \n{interrupt_info}\n"
+                       f"是否通过?(1通过/2拒绝)")
+        if number == "1":
+            is_ok = True
+            feedback = None
+        else:
+            is_ok = False
+            feedback = input(f"\n请输入修改意见: ")
+
+        await self._workflow.ainvoke_continue({"is_ok": is_ok, "feedback": feedback})
+
+    def test_generate_npc_work_flow(self):
+        asyncio.run(self.generate_npc_work_flow())
+
+
+
+
 
 
     # def test_generate_npc_model(self):

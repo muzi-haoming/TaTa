@@ -1,0 +1,2516 @@
+2025-12-24 00:01:39.636 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:21 - 
+
+
+3D模型生成任务ID: 019b4b4d-0e3f-7f72-ad9e-e6cfc19906c5
+2025-12-24 00:01:40.107 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 00:04:49.361 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:21 - 
+
+
+3D模型生成任务ID: 019b4b4f-f494-7fee-adf1-38fe8f15ab95
+2025-12-24 00:04:49.853 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:04:49.853 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 1%
+2025-12-24 00:05:14.773 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:22.618 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:22.619 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:22.620 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 10%
+2025-12-24 00:05:24.558 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:24.558 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 20%
+2025-12-24 00:05:40.666 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:45.198 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 27%
+2025-12-24 00:05:45.198 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:47.401 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 30%
+2025-12-24 00:05:47.402 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:49.216 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 35%
+2025-12-24 00:05:49.217 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:49.218 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 45%
+2025-12-24 00:05:49.218 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:05:49.219 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 49%
+2025-12-24 00:06:01.948 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:02.014 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:02.058 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:02.100 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:09.414 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:09.492 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:14.328 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:15.039 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:15.111 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:16.524 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:16.566 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:16.609 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:16.729 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:16.770 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:17.196 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:21.857 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:23.100 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:23.251 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:24.241 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:26.006 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:26.008 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 50%
+2025-12-24 00:06:26.500 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:31.899 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:31.899 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 60%
+2025-12-24 00:06:38.397 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:38.767 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:38.907 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:39.093 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:39.216 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:39.301 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:39.391 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:39.522 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:39.637 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:46.554 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:46.596 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:46.864 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:46.865 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 61%
+2025-12-24 00:06:46.985 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:46.986 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 66%
+2025-12-24 00:06:47.172 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:47.174 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 71%
+2025-12-24 00:06:47.227 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:47.227 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 76%
+2025-12-24 00:06:47.318 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:47.319 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 81%
+2025-12-24 00:06:47.458 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:06:47.458 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 86%
+2025-12-24 00:06:54.703 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:07:07.074 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:07:07.075 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 96%
+2025-12-24 00:07:07.251 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:07:07.251 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 97%
+2025-12-24 00:07:07.470 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:07:12.175 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:07:12.175 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:34 - 
+3D模型生成进度 [STATUS] Task 99%
+2025-12-24 00:07:13.252 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:07:13.713 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:07:22.579 | INFO     | tests.test_generate_npc_workflow:test_generate_npc_model:27 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 00:18:31.250 | INFO     | workflows.generate_npc_workflow:_build_graph:377 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                .                
+                .                
+                .                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 00:18:31.255 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:57 - 
+===========================
+查询世界观资料
+2025-12-24 00:18:31.256 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:63 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 00:18:31.257 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:69 - 
+===========================
+查询模型风格资料
+2025-12-24 00:18:31.258 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:75 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 00:18:31.259 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:81 - 
+===========================
+查询相关背景资料
+2025-12-24 00:18:31.771 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:89 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 00:18:31.772 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:95 - 
+===========================
+生成NPC角色档案
+2025-12-24 00:18:48.333 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:122 - 
+NPC json档案: 
+{'name': '岩宝', 'race': '鼓隆族', 'personality': '岩宝是一个拥有鼓隆族特有的豪爽和直接，但同时又极其珍视和保护自己花田的鼓隆族小孩。他对花朵有着细腻的情感，与族人热衷矿石的习性截然不同。他对外人靠近花田表现出强烈的戒备心和排他性，甚至有些顽固，偶尔会因担忧花朵受损而显得急躁或冲动，但内心纯真且充满责任感。', 'background': '岩宝是死亡之山的一个小鼓隆族。与同族喜爱矿石和熔岩不同，他被一小片生长在火山脚下、耐热的稀有花朵深深吸引。他视这些花为珍宝，认为它们是贫瘠火山区唯一的柔软和色彩。岩宝全身心投入照料这片小花田，并对任何试图靠近或触碰花朵的人都表现出异乎寻常的戒备与保护欲，誓言要用自己的小小身躯守护这份独特的美丽，即便这与鼓隆族的豪爽性格格格不入。', 'opening_line': '站住！你、你敢碰我的花，就……就尝尝我的拳头！鼓隆！', 'appearance': '岩宝是一个体型圆润但结实的鼓隆族小孩，皮肤呈现出深灰与暗红交织的岩石质感，仿佛小块的火山岩。他的头部直接与宽厚的躯干相连，没有明显的颈部。一双警惕的琥珀色眼睛透露着超越年龄的坚定。他的手臂相对较长，腿部则短而有力。在手臂上，他绑着粗糙的藤蔓和几片火山区的绿色植物作为装饰。最特别的是，他背部或头顶总会小心翼翼地粘着几朵他在花田中培育出的火红或橙色小花，衬托着他粗犷的身体。'}
+2025-12-24 00:18:48.334 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:128 - 
+===========================
+NPC档案评估
+2025-12-24 00:18:59.246 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:146 - 
+NPC档案评估: 
+is_ok=True feedback=''
+2025-12-24 00:18:59.248 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:152 - 
+===========================
+保存NPC角色档案
+2025-12-24 00:18:59.249 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:161 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\岩宝\岩宝.json
+2025-12-24 00:18:59.250 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:167 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 00:19:10.403 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:181 - 
+生成NPC图片的prompt: 
+A full body, front view, T-Pose (arms spread out) character illustration, with a pure white background. The art style is a blend of 50% The Legend of Zelda (Breath of the Wild/Tears of the Kingdom) and 50% Studio Ghibli. The overall aesthetic is stylized realistic. The character is a Goron child named "岩宝" (Yanbao), with a head-to-body ratio of approximately 3.5 to 4 heads. The body is round and sturdy, with an inverted triangle silhouette. The head is directly connected to a broad torso with no visible neck. Arms are relatively long, and legs are short and powerful. Colors are medium to high saturation, not overly bright. Textures are hand-painted style, not photorealistic. There is a subtle outline around the model edges, which is a darker shade of the adjacent material color, not solid black. The Goron child's skin has a dark gray and dark red rocky texture, resembling small volcanic rocks. He has alert amber eyes that convey determination. His hands have distinct, slightly rounded fingers. On his arms, he has rough vines tied with a few green volcanic plants as decorations. Crucially, a few carefully attached fiery red or orange small flowers, which he cultivated, are visible on his back or head, creating a striking contrast with his rugged body. He embodies a unique blend of Goron directness and a deep, protective affection for his flowers, making him appear somewhat guarded and determined. No weapons, only the flower decorations as part of his appearance.
+2025-12-24 00:19:10.405 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:187 - 
+===========================
+生成NPC图片
+2025-12-24 00:19:24.421 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:223 - 
+===========================
+生成NPC图片完成
+2025-12-24 00:19:24.422 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:229 - 
+===========================
+NPC图片评估
+2025-12-24 00:19:37.858 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:261 - 
+NPC图片评估: 
+is_ok=True feedback=''
+2025-12-24 00:19:37.862 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:267 - 
+===========================
+保存NPC图片
+2025-12-24 00:19:37.864 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:277 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\岩宝\岩宝.png
+2025-12-24 00:19:37.866 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:283 - 
+===========================
+生成NPC模型
+2025-12-24 00:19:39.502 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:288 - 
+
+
+3D模型生成任务ID: 019b4b5d-886a-76d6-96a4-952eb214d875
+2025-12-24 00:19:39.982 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 00:19:39.983 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:308 - 
+保存路径: 
+None
+2025-12-24 00:21:09.319 | INFO     | workflows.generate_npc_workflow:_build_graph:377 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                .                
+                .                
+                .                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 00:21:09.326 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:57 - 
+===========================
+查询世界观资料
+2025-12-24 00:21:09.328 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:63 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 00:21:09.328 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:69 - 
+===========================
+查询模型风格资料
+2025-12-24 00:21:09.332 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:75 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 00:21:09.332 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:81 - 
+===========================
+查询相关背景资料
+2025-12-24 00:21:09.827 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:89 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 00:21:09.828 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:95 - 
+===========================
+生成NPC角色档案
+2025-12-24 00:21:28.818 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:122 - 
+NPC json档案: 
+{'name': '咕咚', 'race': '鼓隆族', 'personality': '固执但内心温柔，对花田充满热爱和保护欲。脾气有些火爆，对任何试图触碰花朵的人都会严厉警告。', 'background': '咕咚是死亡之山脚下的年轻鼓隆族。他偶然间发现了一片能在火山灰中生长的奇特花朵，并对它们产生了深厚感情。他悉心照料这片花田，将其视为生命中最宝贵的事物。与同族喜爱岩石和温泉不同，咕咚对这些娇弱的花朵倾注了全部心血，不惜一切代价保护它们免受触碰，希望它们能永远开放在这片贫瘠的土地上。', 'opening_line': '站住！鼓隆！我的花，不许碰！谁碰谁知道！鼓隆！', 'appearance': '咕咚是典型的圆形鼓隆族，皮肤坚硬如岩石。他皮肤上点缀着细小、花瓣般多彩的矿石结晶。脖子上戴一串亲手编织的花朵项链，十分珍爱。粗壮的短腿支撑着庞大身躯，长臂习惯性地护在身前，警惕地驱赶任何试图靠近花田的不速之客。'}
+2025-12-24 00:21:28.819 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:128 - 
+===========================
+NPC档案评估
+2025-12-24 00:21:40.038 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:146 - 
+NPC档案评估: 
+is_ok=True feedback='该角色设定符合所有要求。鼓隆族小孩的设定与鼓隆族的特性以及世界观完全融合。角色对花田的保护欲和脾气与鼓隆族“热血”、“直爽”的性格特点一致，同时他喜爱花朵而非岩石的独特之处也得到了合理的解释，使其成为一个有深度且不违和的角色。外观描述也符合鼓隆族的体型特征和模型风格要求。'
+2025-12-24 00:21:40.039 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:152 - 
+===========================
+保存NPC角色档案
+2025-12-24 00:21:40.041 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:161 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\咕咚\咕咚.json
+2025-12-24 00:21:40.042 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:167 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 00:21:47.433 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:181 - 
+生成NPC图片的prompt: 
+A young Goron character, named Gudu, in a T-pose, full body, front view, against a pure white background. The art style is a blend of 50% The Legend of Zelda: Breath of the Wild and 50% Studio Ghibli, with a stylized realistic feel. The Goron has a round, rock-like body with no visible neck, extremely long arms, and very short legs, adhering to a 3.5 to 4 head-tall proportion. Its tough, stony skin is adorned with small, petal-like colorful mineral crystals, giving it a unique floral texture. Around its neck, it wears a cherished, handmade necklace made of vibrant, delicate flowers. The character's eyes are expressive with clear pupils and high-contrast, suggesting a gentle soul beneath a stubborn exterior. The color palette is medium to high saturation, reminiscent of Ghibli films, with hand-drawn texture details on the rocky skin and floral elements. There are subtle outlines around the character's form, matching the darker shade of its material colors.
+2025-12-24 00:21:47.433 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:187 - 
+===========================
+生成NPC图片
+2025-12-24 00:21:59.406 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:223 - 
+===========================
+生成NPC图片完成
+2025-12-24 00:21:59.407 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:229 - 
+===========================
+NPC图片评估
+2025-12-24 00:22:13.380 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:261 - 
+NPC图片评估: 
+is_ok=True feedback="Goron's head-to-body ratio (approximately 2.5-3 heads) is slightly smaller than the specified 3.5-4 heads. Arm length, while long, does not appear to be 'extremely long (even touching the ground)' as detailed in the Goron physical description. All other aspects, including background, pose, view, color saturation, hand-drawn texture, outlines, eye detail, and general stylistic blend (Zelda + Ghibli), are well-adhered to."
+2025-12-24 00:22:13.382 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:267 - 
+===========================
+保存NPC图片
+2025-12-24 00:22:13.384 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:277 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\咕咚\咕咚.png
+2025-12-24 00:22:13.384 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:283 - 
+===========================
+生成NPC模型
+2025-12-24 00:22:14.592 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:288 - 
+
+
+3D模型生成任务ID: 019b4b5f-e73c-71c6-bd42-9125e52bd890
+2025-12-24 00:22:15.061 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task PENDING
+2025-12-24 00:22:15.169 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:22:15.169 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 1%
+2025-12-24 00:22:33.220 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:22:33.262 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:22:33.313 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:22:33.313 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 10%
+2025-12-24 00:22:47.516 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:22:47.516 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 20%
+2025-12-24 00:23:03.920 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:03.920 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 27%
+2025-12-24 00:23:03.961 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:03.962 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 30%
+2025-12-24 00:23:04.802 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:04.802 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 35%
+2025-12-24 00:23:04.844 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:04.844 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 45%
+2025-12-24 00:23:04.885 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:04.885 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 49%
+2025-12-24 00:23:25.656 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:25.697 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:25.739 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:25.796 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:33.997 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:35.096 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:40.890 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:41.526 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:41.600 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:42.885 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:42.926 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:42.966 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:43.070 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:43.111 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:43.503 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:48.235 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:49.364 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:49.503 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:50.526 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:52.104 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:52.104 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 50%
+2025-12-24 00:23:52.495 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:57.013 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:23:57.014 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 60%
+2025-12-24 00:24:01.802 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.199 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.292 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.564 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.607 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.665 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.790 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.833 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:02.986 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.124 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.175 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.432 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.432 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 61%
+2025-12-24 00:24:10.477 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.477 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 66%
+2025-12-24 00:24:10.518 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.518 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 71%
+2025-12-24 00:24:10.646 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.646 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 76%
+2025-12-24 00:24:10.688 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:10.688 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 81%
+2025-12-24 00:24:11.061 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:11.062 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 86%
+2025-12-24 00:24:18.086 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:30.960 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:30.960 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 96%
+2025-12-24 00:24:31.174 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:31.175 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 97%
+2025-12-24 00:24:32.213 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:37.127 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:37.129 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:301 - 
+3D模型生成进度 [STATUS] Task 99%
+2025-12-24 00:24:38.016 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:38.425 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task IN_PROGRESS
+2025-12-24 00:24:46.053 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:294 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 00:24:47.340 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:308 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\咕咚\咕咚.glb
+2025-12-24 02:01:03.210 | INFO     | workflows.generate_npc_workflow:_build_graph:382 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                .                
+                .                
+                .                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 02:01:03.215 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:51 - 
+===========================
+查询世界观资料
+2025-12-24 02:01:03.217 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:57 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 02:01:03.218 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:63 - 
+===========================
+查询模型风格资料
+2025-12-24 02:01:03.220 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:69 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 02:01:03.220 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:75 - 
+===========================
+查询相关背景资料
+2025-12-24 02:01:03.759 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:83 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 02:01:03.761 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:89 - 
+===========================
+生成NPC角色档案
+2025-12-24 02:01:18.750 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:116 - 
+NPC json档案: 
+{'name': '格隆姆 (Grom)', 'race': '鼓隆族', 'personality': '性格直爽但有些固执，对自己的花田充满热爱和保护欲。虽然是孩子，但非常认真负责，面对外人触碰花田时会显得有些急躁。', 'background': '格隆姆是一个与众不同的鼓隆族小孩，他从小在死亡之山脚下长大，却对炽热的岩石之外的生命充满好奇。他发现一种特殊的耐热植物能在火山灰中生长，并用自己收集的发光矿石滋养它们。这些矿石让花朵开得异常鲜艳。他将这片花田视为自己的全部，不容许任何人接近或破坏，誓要守护这些脆弱而美丽的生命。', 'opening_line': '不许碰！这是我的花田，鼓隆！你再靠近一步，我就不客气了！', 'appearance': '格隆姆体型圆润，皮肤呈现火山岩般的深褐与赤红交织，坚硬而有光泽。头部与躯干浑然一体，没有明显的脖颈，四肢粗短有力。他习惯性地微弓着背，双手交叠，仿佛随时准备护住身后那片来之不易的花田。目光虽稚嫩，却透着一股不容侵犯的坚定。他脖子戴着一串朴素的矿石项链，那是他用来滋养花朵的秘宝。'}
+2025-12-24 02:01:18.750 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:122 - 
+===========================
+NPC档案评估
+2025-12-24 02:01:39.859 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:140 - 
+NPC档案评估: 
+is_ok=True feedback='角色设定完全符合鼓隆族的特点和世界观。特别是在背景故事中，鼓隆族小孩对花田的热爱和使用矿石滋养植物的设定，巧妙地融入了鼓隆族“吃矿石”的习性，并使其成为一个独特且具有深度的角色。外观描述也与鼓隆族的体型特征和《塞尔达风格》的比例要求相符。台词中的“鼓隆”也符合种族习惯。'
+2025-12-24 02:01:39.859 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:146 - 
+===========================
+保存NPC角色档案
+2025-12-24 02:01:39.861 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:155 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\格隆姆 (Grom)\格隆姆 (Grom).json
+2025-12-24 02:01:39.862 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:161 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 02:01:47.811 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:175 - 
+生成NPC图片的prompt: 
+A full-body, front-facing image of a Goron child character named Grom, in a T-pose with arms spread out. The art style is a 50/50 blend of "The Legend of Zelda: Breath of the Wild" and Studio Ghibli aesthetics. The background is pure white. Grom has a round, sturdy body, with skin like volcanic rock in deep brown and reddish hues, appearing hard and shiny. His head blends directly into his torso with no discernible neck. He has short, powerful limbs. His eyes are childlike yet convey a firm and determined gaze. He wears a simple necklace made of glowing minerals. The overall look should be stylized realistic, with medium-high color saturation, Ghibli-esque colors, and a hand-painted texture feel. There are clear outlines around the character, which are darker versions of the material colors. His eyes have prominent highlights, and his fingers are defined but slightly rounded. The Goron body proportion is approximately 3.5 to 4 heads tall.
+2025-12-24 02:01:47.812 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:181 - 
+===========================
+生成NPC图片
+2025-12-24 02:01:59.461 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:217 - 
+===========================
+生成NPC图片完成
+2025-12-24 02:01:59.461 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:223 - 
+===========================
+NPC图片评估
+2025-12-24 02:02:13.539 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:255 - 
+NPC图片评估: 
+is_ok=True feedback='该角色图片完全符合鼓隆族（Gorons）的外貌特征和模型风格要求。岩石般的皮肤、巨大的体型、类熔岩的裂纹都高度吻合设定的描述。'
+2025-12-24 02:02:13.540 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:261 - 
+===========================
+保存NPC图片
+2025-12-24 02:02:13.543 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:271 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\格隆姆 (Grom)\格隆姆 (Grom).png
+2025-12-24 02:02:13.544 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:277 - 
+===========================
+生成NPC模型
+2025-12-24 02:02:15.007 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:283 - 
+
+
+3D模型生成任务ID: 019b4bbb-74b2-7505-a21f-d7d125e0a09a
+2025-12-24 02:02:15.472 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 02:02:16.594 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:313 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\格隆姆 (Grom)\格隆姆 (Grom).glb
+2025-12-24 02:07:31.213 | INFO     | workflows.generate_npc_workflow:_build_graph:382 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                .                
+                .                
+                .                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 02:07:31.219 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:51 - 
+===========================
+查询世界观资料
+2025-12-24 02:07:31.226 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:57 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 02:07:31.228 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:63 - 
+===========================
+查询模型风格资料
+2025-12-24 02:07:31.233 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:69 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 02:07:31.233 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:75 - 
+===========================
+查询相关背景资料
+2025-12-24 02:07:31.705 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:83 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 02:07:31.707 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:89 - 
+===========================
+生成NPC角色档案
+2025-12-24 02:07:44.343 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:116 - 
+NPC json档案: 
+{'name': '花洛克 (Hua Luoke)', 'race': '鼓隆族', 'personality': '直爽、憨厚，但对自己的花田异常执着和保护欲强，不允许任何人靠近，否则会变得严肃甚至有点凶。', 'background': '花洛克是鼓隆城里一个与众不同的小鼓隆，相比于矿石和岩浆，他更迷恋那些在岩缝中顽强生长的鲜花。长老们看他如此喜爱，便把一片珍稀的耐热花田交给他看护。他为此感到非常自豪，并发誓绝不允许任何人破坏这片美丽的土地。', 'opening_line': '嘿，你！不许靠近我的花，鼓隆！敢碰一下试试看！', 'appearance': '皮肤呈火山岩般的灰褐色，圆滚滚的小身体，没有脖子。虽然是小孩，手臂也显得粗壮有力，短小的双腿稳稳扎根。他的头顶戴着一朵鲜艳的耐热花，眼中充满了对花田的警惕。'}
+2025-12-24 02:07:44.343 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:122 - 
+===========================
+NPC档案评估
+2025-12-24 02:07:51.604 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:140 - 
+NPC档案评估: 
+is_ok=True feedback='该NPC在种族特征（鼓隆族的外貌、憨厚直爽的性格、说话带“鼓隆”）、地理位置（鼓隆城）和行为逻辑（对“耐热花”的执着与保护，而非传统意义上的对矿石的偏爱，这增加了角色的独特性但并未与种族设定冲突，且耐热花符合鼓隆城环境）方面均与世界观设定保持一致。他的“花田”是长老特意交予照看的，这使得其兴趣的独特性得到合理支撑。'
+2025-12-24 02:07:51.605 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:146 - 
+===========================
+保存NPC角色档案
+2025-12-24 02:07:51.607 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:155 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\花洛克 (Hua Luoke)\花洛克 (Hua Luoke).json
+2025-12-24 02:07:51.608 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:161 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 02:07:58.827 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:175 - 
+生成NPC图片的prompt: 
+A childlike Goron character named Hua Luoke, with volcanic rock-like grayish-brown skin, a round and sturdy body, no visible neck, and long arms and short legs. He has a vibrant heat-resistant flower on his head. His eyes are alert and vigilant. The art style is 50% Zelda and 50% Ghibli, stylized realistic with a hand-drawn texture and medium-high color saturation. Full body, frontal view, T-pose with arms spread. Pure white background. The character's head-to-body ratio is approximately 3.5 to 4 heads tall, with a slightly larger head, hands, and feet to fit the stylized realism.
+2025-12-24 02:07:58.827 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:181 - 
+===========================
+生成NPC图片
+2025-12-24 02:08:09.300 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:217 - 
+===========================
+生成NPC图片完成
+2025-12-24 02:08:09.300 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:223 - 
+===========================
+NPC图片评估
+2025-12-24 02:08:48.463 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:255 - 
+NPC图片评估: 
+is_ok=True feedback='该角色完美符合海拉鲁世界观中鼓隆族（Goron）的特征和美术风格要求。\n\n**符合项：**\n*   **种族识别：** 角色拥有岩石般开裂的皮肤，内部透出岩浆般的光芒，体型圆润，头部直接连接躯干，无明显脖子，这些都与鼓隆族“拥有岩石般坚硬皮肤，体型巨大圆润，身体耐火”的外貌特征高度吻合。头上的火焰花朵也暗示了鼓隆族对火焰的亲和力。\n*   **模型比例：** 角色呈现出3.5到4头身的比例，头部相对较大，腿部较短，符合鼓隆族的头身比描述。\n*   **通用美术风格：**\n    *   背景为纯白色，T-Pose，正面全身图，完全符合要求。\n    *   整体风格为风格化写实，兼具塞尔达与宫崎骏的特色。\n    *   色彩饱和度适中偏高，但不明艳刺眼，纹理呈现手绘风格。\n    *   模型边缘有描边，颜色是材质的深色版本。\n    *   眼睛有高光，手指分明且圆润。\n    *   装备（肩带和腰带）有明显的物理挂载结构和扣件。\n\n**可改进项（轻微不符，不影响整体评价）：**\n*   在鼓隆族的体态描述中提到了“手臂极长（甚至垂地）”，而图片中的角色手臂相对较短，与描述有细微出入。但这可能是儿童鼓隆族的特点，而非所有鼓隆族都如此。\n*   描述中称鼓隆族为“巨汉”，而图中角色体型更像幼年或少年鼓隆，而非成年巨汉，但其种族特征非常明显。'
+2025-12-24 02:08:48.463 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:261 - 
+===========================
+保存NPC图片
+2025-12-24 02:08:48.467 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:271 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\花洛克 (Hua Luoke)\花洛克 (Hua Luoke).png
+2025-12-24 02:08:48.468 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:277 - 
+===========================
+生成NPC模型
+2025-12-24 02:08:49.694 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:283 - 
+
+
+3D模型生成任务ID: 019b4bc1-7e9e-7605-8a7b-75631abbda01
+2025-12-24 02:08:50.170 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 1%
+2025-12-24 02:09:13.579 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 10%
+2025-12-24 02:09:25.594 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 20%
+2025-12-24 02:09:42.982 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 27%
+2025-12-24 02:09:43.026 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 30%
+2025-12-24 02:09:43.250 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 35%
+2025-12-24 02:09:43.292 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 45%
+2025-12-24 02:09:43.609 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 49%
+2025-12-24 02:10:31.143 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 50%
+2025-12-24 02:10:40.216 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 60%
+2025-12-24 02:10:55.498 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 61%
+2025-12-24 02:10:55.598 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 66%
+2025-12-24 02:10:55.640 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 71%
+2025-12-24 02:10:55.730 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 76%
+2025-12-24 02:10:55.866 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 81%
+2025-12-24 02:10:56.078 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 86%
+2025-12-24 02:11:15.543 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 96%
+2025-12-24 02:11:15.713 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 97%
+2025-12-24 02:11:21.254 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 99%
+2025-12-24 02:11:32.947 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 02:11:34.248 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:313 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\花洛克 (Hua Luoke)\花洛克 (Hua Luoke).glb
+2025-12-24 02:55:21.502 | INFO     | workflows.generate_npc_workflow:_build_graph:382 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                .                
+                .                
+                .                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 02:55:21.504 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:51 - 
+===========================
+查询世界观资料
+2025-12-24 02:55:21.519 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:57 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 02:55:21.520 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: search_worldview
+2025-12-24 02:55:21.520 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:63 - 
+===========================
+查询模型风格资料
+2025-12-24 02:55:21.530 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:69 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 02:55:21.532 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: search_model_style
+2025-12-24 02:55:21.532 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:75 - 
+===========================
+查询相关背景资料
+2025-12-24 02:55:22.060 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:83 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 02:55:22.062 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: search_relevent_lore
+2025-12-24 02:55:22.063 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:89 - 
+===========================
+生成NPC角色档案
+2025-12-24 02:55:39.726 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:116 - 
+NPC json档案: 
+{'name': '芬恩 (Finn)', 'race': '海利亚人 (Hylian)', 'personality': '心灵手巧，对建筑充满热情，但性格娇气且有些娘娘腔。他虽然不善体力活，却能用其精湛的技艺弥补不足，对待工作一丝不苟，追求完美和精致。', 'background': '芬恩自幼在海拉鲁平原的村落长大，虽体格不壮，却对建筑技艺充满热情。心灵手巧的他，无论是修屋还是架桥都能胜任。常因娇气被误解，但他总用精湛技艺证明自己。芬恩是村里不可或缺的建筑师，梦想重建美丽海拉鲁。', 'opening_line': '“哎呀，这位客人，有什么需要我帮忙的吗？是想让您的房子变得更……精致一点吗？”', 'appearance': '一位中等身材的秃头海利亚人，尖耳微翘，头顶光滑。他身着整洁工人服，腰挂工具包。虽为建筑工，指甲却修剪精致，眼神流露出与体格不符的柔和与细腻。'}
+2025-12-24 02:55:39.728 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 02:55:39.728 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:122 - 
+===========================
+NPC档案评估
+2025-12-24 02:55:47.690 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:140 - 
+NPC档案评估: 
+is_ok=True feedback=''
+2025-12-24 02:55:47.693 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 02:55:47.693 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:146 - 
+===========================
+保存NPC角色档案
+2025-12-24 02:55:47.695 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:155 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\芬恩 (Finn)\芬恩 (Finn).json
+2025-12-24 02:55:47.696 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: save_npc_json
+2025-12-24 02:55:47.697 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:161 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 02:56:03.929 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:175 - 
+生成NPC图片的prompt: 
+Character image, pure white background, T-Pose, arms spread, full body front view. Style: 50% Legend of Zelda (Breath of the Wild / Tears of the Kingdom era) + 50% Studio Ghibli. The overall aesthetic is stylized realistic, with a focus on vibrant, hand-drawn textures and characterful design.
+
+**Character: Finn, a Hylian architect.**
+
+**Physical Appearance:**
+Finn is a Hylian of medium build. He has a bald, smooth head and characteristic pointed Hylian ears that are slightly perked.
+He wears a neat, practical worker's uniform, rendered with a hand-drawn linen-like texture. Around his waist is a tool belt, with various building tools visibly and physically attached by hooks and loops, rather than floating.
+His hands should be depicted with distinct, slightly rounded fingers. Despite his profession, his fingernails are meticulously trimmed and pristine.
+His facial features follow the Hylian model style: eyes are prominent (approx. 20% of face), clear pupils with distinct highlights, conveying a gentle and delicate nature. His nose and mouth are simplified but three-dimensional.
+
+**Body Proportions & Silhouette:**
+His head-to-body ratio is approximately 6.0 to 6.5 heads. His head, hands, and feet are slightly larger than realistic human proportions, enhancing character readability. His posture is balanced, leaning slightly towards a refined rather than overtly strong build, subtly hinting at his 'delicate' personality.
+
+**Color & Texture:**
+The color palette is inspired by Ghibli, featuring medium-to-high saturation that is pleasant and not overly bright. Materials like his uniform and tool belt should have a clear, hand-drawn texture, avoiding photorealism.
+There is a subtle outline around the model. This outline is not stark black but a darker shade of the adjacent material's color, and its thickness subtly adjusts with perceived distance (thinner for distant parts).
+
+**Overall Impression:**
+Finn's expression should reflect his meticulous and passionate personality, as well as his gentle and somewhat effeminate nature. He is a skilled craftsman who values perfection and beauty in his work. The image should capture his unique blend of dedication and delicate sensibility within the magical and ancient-tech-infused world of Hyrule.
+2025-12-24 02:56:03.930 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: generate_npc_image_prompt
+2025-12-24 02:56:03.931 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:181 - 
+===========================
+生成NPC图片
+2025-12-24 02:56:19.860 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:217 - 
+===========================
+生成NPC图片完成
+2025-12-24 02:56:19.862 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: generate_npc_image_generator
+2025-12-24 02:56:19.863 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:223 - 
+===========================
+NPC图片评估
+2025-12-24 02:56:32.595 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:255 - 
+NPC图片评估: 
+is_ok=True feedback='角色图片符合塞尔达风格与宫崎骏风格的融合要求，且遵循了T-Pose、纯白背景、正面全身等基本规定。\n\n具体分析如下：\n\n1.  **基础模型比例与轮廓 (Proportions & Silhouette)**：\n    *   **头身比**：目测约为6-6.5头身，符合海利亚人“介于写实与Q版之间”的风格化写实描述，头部略大，使得角色表情在远距离下依然清晰。\n    *   **体态**：角色轮廓干练，没有过多肌肉堆积，符合海利亚人“重心感”的描述。\n    *   **面部**：眼睛在面部占比适中，瞳孔清晰且有高光，鼻子和嘴巴简化处理，符合面部特征描述。\n\n2.  **模型拓扑与材质风格**：\n    *   **色彩饱和度**：图片采用的色彩饱和度中等偏高，但不明艳刺眼，整体配色有“吉卜力”式的感觉，服装材质（如衬衫、皮质工具包）呈现出纹理感，但笔触更偏手绘，而非照片级写实。\n    *   **轮廓线 (Outline)**：角色模型边缘有明显的描边，且描边颜色并非纯黑色，而是材质颜色的深色版本，符合描述。\n\n3.  **细节特征**：\n    *   **眼睛**：眼睛有高光，显得有神。\n    *   **手部**：手指分明，指尖略显圆润。\n    *   **装备挂载**：工具带上的工具清晰可见，且有物理挂载结构，符合“武器和盾牌不是凭空消失，而是物理挂载”的理念。\n\n4.  **角色种族与职业判断**：\n    *   **种族**：角色拥有尖耳朵，且外形与人类无异，明确符合海利亚人（Hylian）的外貌特征。\n    *   **职业**：身穿工作服并佩戴工具腰带，暗示其为工匠或劳动者，这与海利亚人“拥有多样的职业（农夫、商人、士兵、学者）”的设定相符。'
+2025-12-24 02:56:32.597 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: generate_npc_image_evaluator
+2025-12-24 02:56:32.597 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:261 - 
+===========================
+保存NPC图片
+2025-12-24 02:56:32.600 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:271 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\芬恩 (Finn)\芬恩 (Finn).png
+2025-12-24 02:56:32.602 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: save_npc_image
+2025-12-24 02:56:32.603 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:277 - 
+===========================
+生成NPC模型
+2025-12-24 02:56:33.894 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:283 - 
+
+
+3D模型生成任务ID: 019b4bed-32f0-7821-bac0-a3b3e9f82f66
+2025-12-24 02:56:34.389 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 1%
+2025-12-24 02:56:54.973 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 10%
+2025-12-24 02:57:03.949 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 20%
+2025-12-24 02:57:17.449 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 27%
+2025-12-24 02:57:17.492 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 30%
+2025-12-24 02:57:17.644 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 35%
+2025-12-24 02:57:17.688 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 45%
+2025-12-24 02:57:17.839 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 49%
+2025-12-24 02:57:57.819 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 50%
+2025-12-24 02:58:03.770 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 60%
+2025-12-24 02:58:18.174 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 61%
+2025-12-24 02:58:18.252 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 66%
+2025-12-24 02:58:18.293 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 71%
+2025-12-24 02:58:18.337 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 76%
+2025-12-24 02:58:18.419 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 81%
+2025-12-24 02:58:18.470 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 86%
+2025-12-24 02:58:33.937 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 96%
+2025-12-24 02:58:34.068 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 97%
+2025-12-24 02:58:38.490 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:300 - 
+3D模型生成进度 [STATUS] Task 99%
+2025-12-24 02:58:46.692 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 02:58:47.955 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:313 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\芬恩 (Finn)\芬恩 (Finn).glb
+2025-12-24 02:58:47.957 | INFO     | ui.npc_generation_page:run_workflow_with_progress:519 - 工作流节点完成: generate_npc_model
+2025-12-24 03:27:50.504 | INFO     | workflows.generate_npc_workflow:_build_graph:404 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                .                
+                .                
+                .                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 03:27:50.531 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:58 - 
+===========================
+查询世界观资料
+2025-12-24 03:27:50.535 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:64 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 03:27:50.536 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_worldview
+2025-12-24 03:27:50.537 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:70 - 
+===========================
+查询模型风格资料
+2025-12-24 03:27:50.537 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:76 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 03:27:50.539 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_model_style
+2025-12-24 03:27:50.539 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:82 - 
+===========================
+查询相关背景资料
+2025-12-24 03:27:50.991 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:90 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 03:27:50.992 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_relevent_lore
+2025-12-24 03:27:50.993 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:96 - 
+===========================
+生成NPC角色档案
+2025-12-24 03:28:02.978 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+NPC json档案: 
+{'name': '提米', 'race': '海利亚人', 'personality': '害羞但又渴望推销自己的商品，带着孩子气的好奇心，对金钱略显精明。', 'background': '提米是哈特诺村一个普通的海利亚家庭的孩子，从小在村庄的田野间长大。他帮家里采摘并售卖各种野生的蘑菇，希望能赚取一些卢比，补贴家用，或者买些自己喜欢的小玩意儿。', 'opening_line': '嘿！旅行者大哥哥/姐姐！来看看我今天新鲜采摘的蘑菇吧！保证是哈特诺最棒的！', 'appearance': '一个约十岁左右的海利亚男孩，有着一头棕色的短发和一对海利亚人特有的尖耳朵。他身穿一件打了补丁的亚麻色上衣和一条旧短裤，脚上是磨损的皮靴。脸上总是带着一丝害羞又期盼的笑容。他背着一个比他身子还大的草编篮子，里面装满了五颜六色的新鲜蘑菇，篮子的边沿露出几片宽大的叶子，用来保持蘑菇的新鲜。'}
+2025-12-24 03:28:02.981 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 03:28:02.982 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:129 - 
+===========================
+NPC档案评估
+2025-12-24 03:28:10.501 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:147 - 
+NPC档案评估: 
+is_ok=True feedback='A ten-year-old Hylian boy, 6.0 to 6.5 head-body ratio, slightly larger head, hands, and feet. He has short brown hair and characteristic pointed Hylian ears. His eyes are lively with highlights, accounting for about 20% of his face, with simplified nose and mouth. He wears a patched linen shirt, old shorts, and worn leather boots. He has a shy yet hopeful smile. On his back, he carries a wicker basket larger than his body, clearly mounted, filled with colorful fresh mushrooms. Wide green leaves are visible from the edge of the basket to keep the mushrooms fresh. The art style is 50% Zelda and 50% Miyazaki, with medium-high color saturation and hand-drawn textures. Model edges have a darker-colored outline. Pure white background, T-pose with arms spread, full body front view.'
+2025-12-24 03:28:10.503 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 03:28:10.504 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:153 - 
+===========================
+保存NPC角色档案
+2025-12-24 03:28:10.506 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:162 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\提米\提米.json
+2025-12-24 03:28:10.509 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: save_npc_json
+2025-12-24 03:28:10.510 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:168 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 03:28:19.200 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:182 - 
+生成NPC图片的prompt: 
+一个大约十岁的海利亚男孩，名叫提米，采用T型姿势，双臂展开，全身正面视图，纯白色背景。艺术风格是50%塞尔达传说（旷野之息/王国之泪）和50%吉卜力工作室的融合，呈现风格化的写实外观。他的身体比例大约是6.0到6.5头身，头部、手掌和脚掌略大，整体轮廓精干。他的眼睛大而富有表现力，占据面部约20%，带有清晰的高光；鼻子和嘴巴简化处理。他有一头棕色短发和海利亚人特有的尖耳朵。他穿着一件打补丁的亚麻色上衣、一条旧短裤和一双磨损的皮靴。他的背上背着一个比他自己还大的草编篮子，里面装满了五颜六色的新鲜蘑菇，篮子的边缘有几片宽大的叶子伸出来，以保持蘑菇的新鲜。他脸上带着害羞而又期盼的笑容。色彩饱和度中等偏高，具有吉卜力风格的手绘纹理感。角色边缘有描边，描边颜色是材质颜色的深色版本，粗细随视距变化。手指分明，指尖略微圆润。篮子清晰地物理挂载在他的背上。
+2025-12-24 03:28:19.202 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_image_prompt
+2025-12-24 03:28:19.202 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:188 - 
+===========================
+生成NPC图片
+2025-12-24 03:28:32.470 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:224 - 
+===========================
+生成NPC图片完成
+2025-12-24 03:28:32.473 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_image_generator
+2025-12-24 03:28:32.473 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:230 - 
+===========================
+NPC图片评估
+2025-12-24 03:28:40.873 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:262 - 
+NPC图片评估: 
+is_ok=True feedback=''
+2025-12-24 03:28:40.874 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_image_evaluator
+2025-12-24 03:28:40.874 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:268 - 
+===========================
+保存NPC图片
+2025-12-24 03:28:40.877 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:278 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\提米\提米.png
+2025-12-24 03:28:40.895 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: save_npc_image
+2025-12-24 03:28:40.895 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:284 - 
+===========================
+生成NPC模型
+2025-12-24 03:28:42.394 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+
+
+3D模型生成任务ID: 019b4c0a-9f3f-764c-a0f3-bb299fff4d94
+2025-12-24 03:28:42.885 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:307 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 03:28:44.046 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:335 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\提米\提米.glb
+2025-12-24 03:28:44.048 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_model
+2025-12-24 03:30:08.646 | INFO     | workflows.generate_npc_workflow:_build_graph:404 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 03:30:08.650 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:58 - 
+===========================
+查询世界观资料
+2025-12-24 03:30:08.652 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:64 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 03:30:08.653 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_worldview
+2025-12-24 03:30:08.653 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:70 - 
+===========================
+查询模型风格资料
+2025-12-24 03:30:08.654 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:76 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 03:30:08.655 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_model_style
+2025-12-24 03:30:08.655 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:82 - 
+===========================
+查询相关背景资料
+2025-12-24 03:30:09.090 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:90 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 03:30:09.092 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_relevent_lore
+2025-12-24 03:30:09.092 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:96 - 
+===========================
+生成NPC角色档案
+2025-12-24 03:30:24.080 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+NPC json档案: 
+{'name': '托比', 'race': '海利亚人', 'personality': '托比是个机灵古怪、嘴上不饶人的小屁孩。他对自己的商品（他坚称是“顶级传说武器”）有着超乎年龄的自信，甚至有些自负。他精明狡猾，善于察言观色，总能找到机会推销。虽然年纪小，却对卢比有着异常的执着，是个天生的商人。他有时会表现出孩子气的一面，比如喜欢吹嘘或对不买他东西的人翻白眼。', 'background': '托比从小在哈特诺村长大，耳濡目染了村里商贩的叫卖声。他没有兴趣像其他孩子一样去农田里玩耍，而是对那些被遗忘的古代遗物和传说中的兵器情有独钟。通过偷偷摸摸地探索附近的山林和废墟，他意外发现了一些看似不起眼的武器，并凭借他独特的眼光和对“传说”的夸张演绎，将它们以高价售出。他甚至声称有些武器是他亲自从魔物手中夺来的。', 'opening_line': '“哟，旅行者！别光看那些破烂摊子了。想不想看看真正能扭转战局的‘传说之刃’？童叟无欺，概不退换哦！”', 'appearance': '托比是个大约6岁的海利亚男孩，身材瘦小但眼神炯炯有神。他有着一头蓬乱的棕色短发，一对略显夸张的尖耳朵在发丝间若隐若现。他穿着一件颜色鲜艳但有些脏旧的蓝色短上衣，腰间系着磨损的皮质钱袋。脸上总是挂着狡黠的笑容，眼睛在面部占比约20%，瞳孔明亮，带着商人特有的精明。他背后背着一个比他身高还长的木箱，上面隐约可见几个磨损的符文。整体符合塞尔达与宫崎骏结合的风格，头部略大，手脚掌偏大。'}
+2025-12-24 03:30:24.081 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 03:30:24.082 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:129 - 
+===========================
+NPC档案评估
+2025-12-24 03:30:32.286 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:147 - 
+NPC档案评估: 
+is_ok=True feedback='None'
+2025-12-24 03:30:32.288 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 03:30:32.288 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:153 - 
+===========================
+保存NPC角色档案
+2025-12-24 03:30:32.292 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:162 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\托比\托比.json
+2025-12-24 03:30:32.293 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: save_npc_json
+2025-12-24 03:30:32.294 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:168 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 03:35:30.823 | INFO     | workflows.generate_npc_workflow:_build_graph:404 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                .                
+                .                
+                .                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 03:35:30.827 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:58 - 
+===========================
+查询世界观资料
+2025-12-24 03:35:30.828 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:64 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 03:35:30.830 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_worldview
+2025-12-24 03:35:30.830 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:70 - 
+===========================
+查询模型风格资料
+2025-12-24 03:35:30.832 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:76 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 03:35:30.833 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_model_style
+2025-12-24 03:35:30.834 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:82 - 
+===========================
+查询相关背景资料
+2025-12-24 03:35:31.417 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:90 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 03:35:31.419 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: search_relevent_lore
+2025-12-24 03:35:31.419 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:96 - 
+===========================
+生成NPC角色档案
+2025-12-24 03:35:43.136 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+NPC json档案: 
+{'name': '米洛', 'race': '海利亚人', 'personality': '米洛是个早熟且自信的孩子，对自己的“传说武器”充满自豪，虽然有点小小的夸张和狡猾，但内心仍是纯真的。他善于推销，口才极佳，对卢比有着超乎年龄的敏锐嗅觉。', 'background': '米洛是哈特诺村一个早熟的孩子，他发现自己对寻找和“修复”古代武器有特殊天赋。他会在附近的遗迹中寻宝，把找到的旧武器打磨一新，然后夸大其词地将它们称为“传说武器”出售，以此补贴家用。他坚信自己未来会成为大陆上最伟大的商人。', 'opening_line': '嘿，旅行者！过来看看，我这可是哈特诺村独一份的顶级传说武器，包你满意，价格绝对公道！', 'appearance': '一个约八到十岁的海利亚男孩，一头蓬松的棕色短发，大而灵动的眼睛闪烁着精明。他穿着一件缝补过的粗布上衣和一条短裤，腰间系着一个磨旧的皮质工具包。他背着一个比他稍大的木制背包，里面可能藏着他引以为傲的“传说武器”。'}
+2025-12-24 03:35:43.137 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 03:35:43.138 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:129 - 
+===========================
+NPC档案评估
+2025-12-24 03:35:52.686 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:147 - 
+NPC档案评估: 
+is_ok=True feedback='NPC人设与promot，世界观设定，模型风格以及种族习性均高度一致。具体如下：\n'
+2025-12-24 03:35:52.688 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 03:35:52.688 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:153 - 
+===========================
+保存NPC角色档案
+2025-12-24 03:35:52.691 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:162 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\米洛\米洛.json
+2025-12-24 03:35:52.693 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: save_npc_json
+2025-12-24 03:35:52.693 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:168 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 03:35:57.683 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:182 - 
+生成NPC图片的prompt: 
+A Hylian boy named Milo, 8-10 years old, in T-Pose with arms spread, front full body, pure white background. The art style is 50% Legend of Zelda and 50% Studio Ghibli. He has fluffy brown short hair and large, expressive, intelligent eyes with highlights. His proportions are approximately 6.0 to 6.5 heads tall, with a slightly larger head, hands, and feet. He is wearing a patched, coarse cloth top and shorts. A worn leather tool pouch is tied around his waist. He carries a wooden backpack on his back, slightly larger than himself, possibly containing his "legendary weapons". His hands have distinct, slightly rounded fingers. The overall color saturation is medium-high, with hand-drawn textures for his clothes and accessories. There is a visible outline around his figure, which is a darker shade of the material color. His eyes have clear pupils and highlights.
+2025-12-24 03:35:57.684 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_image_prompt
+2025-12-24 03:35:57.686 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:188 - 
+===========================
+生成NPC图片
+2025-12-24 03:36:11.455 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:224 - 
+===========================
+生成NPC图片完成
+2025-12-24 03:36:11.456 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_image_generator
+2025-12-24 03:36:11.457 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:230 - 
+===========================
+NPC图片评估
+2025-12-24 03:36:26.086 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:262 - 
+NPC图片评估: 
+is_ok=True feedback='角色图片符合大部分标准，特别是T-Pose、纯白背景和全身正面展示。角色比例和面部特征符合年轻海利亚人的风格化写实设定，装备挂载也符合物理逻辑。色彩饱和度和材质纹理也达到了“吉卜力”式的效果。唯一可以改进的是模型的轮廓线，目前是实心黑色，而标准建议使用材质颜色的深色版本，且线条粗细随视距变化。'
+2025-12-24 03:36:26.090 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_image_evaluator
+2025-12-24 03:36:26.090 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:268 - 
+===========================
+保存NPC图片
+2025-12-24 03:36:26.093 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:278 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\米洛\米洛.png
+2025-12-24 03:36:26.108 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: save_npc_image
+2025-12-24 03:36:26.108 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:284 - 
+===========================
+生成NPC模型
+2025-12-24 03:36:27.332 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+
+
+3D模型生成任务ID: 019b4c11-b85e-7eb1-839b-8b5c8b31f51e
+2025-12-24 03:36:27.815 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 1%
+2025-12-24 03:36:50.557 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 10%
+2025-12-24 03:36:59.497 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 20%
+2025-12-24 03:37:16.920 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 27%
+2025-12-24 03:37:16.962 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 30%
+2025-12-24 03:37:17.251 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 35%
+2025-12-24 03:37:17.294 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 45%
+2025-12-24 03:37:17.658 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 49%
+2025-12-24 03:38:09.415 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 50%
+2025-12-24 03:38:15.699 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 60%
+2025-12-24 03:38:31.963 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 61%
+2025-12-24 03:38:32.074 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 66%
+2025-12-24 03:38:32.363 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 71%
+2025-12-24 03:38:32.582 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 76%
+2025-12-24 03:38:32.637 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 81%
+2025-12-24 03:38:32.696 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 86%
+2025-12-24 03:38:53.101 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 96%
+2025-12-24 03:38:53.322 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 97%
+2025-12-24 03:38:59.084 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 99%
+2025-12-24 03:39:08.294 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:307 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 03:39:09.626 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:335 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\米洛\米洛.glb
+2025-12-24 03:39:09.627 | INFO     | ui.npc_generation_page:run_workflow_with_progress:639 - 工作流节点完成: generate_npc_model
+2025-12-24 03:45:21.916 | INFO     | workflows.generate_npc_workflow:_build_graph:404 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 03:45:21.919 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:58 - 
+===========================
+查询世界观资料
+2025-12-24 03:45:21.921 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:64 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 03:45:21.922 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: search_worldview
+2025-12-24 03:45:21.924 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:70 - 
+===========================
+查询模型风格资料
+2025-12-24 03:45:21.925 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:76 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 03:45:21.925 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: search_model_style
+2025-12-24 03:45:21.927 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:82 - 
+===========================
+查询相关背景资料
+2025-12-24 03:45:22.632 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:90 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 03:45:22.634 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: search_relevent_lore
+2025-12-24 03:45:22.634 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:96 - 
+===========================
+生成NPC角色档案
+2025-12-24 03:45:35.911 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+NPC json档案: 
+{'name': '林克鲁', 'race': '海利亚人', 'personality': '过于自信、有点傲慢和狡黠，对武器知识非常渊博，喜欢吹嘘自己的“宝藏”和商业头脑，总想通过卖武器赚大钱。', 'background': '出生于哈特诺村的商人世家，林克鲁从小耳濡目染，对各种武器和宝物有着过人的嗅觉。他自称能寻到世间顶级的传说武器，梦想着有一天能把自己的小摊位开遍整个海拉鲁，成为最富有的武器商。', 'opening_line': '嘿！想不想看看真正的宝藏？我这里的货色，连林克看了都得惊掉下巴！保证让你物超所值！', 'appearance': '一个看起来只有七八岁的海利亚小男孩，瘦小却精神十足。一双尖耳朵格外显眼，脸上挂着狡黠又自信的笑容。他穿着一套洗得发白的商人马甲，腰间系着一个装满奇特小玩意的布袋，手里总把玩着一柄迷你但雕刻精美的匕首。'}
+2025-12-24 03:45:35.912 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 03:45:35.913 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:129 - 
+===========================
+NPC档案评估
+2025-12-24 03:45:44.092 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:147 - 
+NPC档案评估: 
+is_ok=True feedback='角色设定符合世界观和种族特性。林克鲁作为哈特诺村的海利亚小男孩，拥有商人世家的背景，喜欢金钱并对武器有独到见解，这与海利亚人“喜欢卢比 (钱)、旅行贸易”的种族习性高度契合。他的年龄和言行也符合“小屁孩”的设定，并且他的外观特征（尖耳朵、瘦小但精神）也与海利亚人描述一致。没有发现与世界观和模型风格的冲突点。'
+2025-12-24 03:45:44.094 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 03:45:44.094 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:153 - 
+===========================
+保存NPC角色档案
+2025-12-24 03:45:44.097 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:162 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\林克鲁\林克鲁.json
+2025-12-24 03:45:44.099 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: save_npc_json
+2025-12-24 03:45:44.100 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:168 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 03:45:53.112 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:182 - 
+生成NPC图片的prompt: 
+A Hylian little boy, about 7-8 years old. Style: 50% Zelda, 50% Ghibli, hand-painted texture. Full body, front view, T-pose with arms spread, pure white background. He has prominent pointed ears and a cunning, confident smile. Skinny but spirited build. Head-to-body ratio 6 to 6.5 heads, with a slightly larger head, hands, and feet. Eyes are about 20% of his face, with clear pupils and highlights. Nose and mouth are simplified, with weakened nose bridge shadow. He wears a worn-out merchant's vest, a cloth pouch filled with odd trinkets tied around his waist. He holds a miniature, intricately carved dagger. Clothes show linen texture. Color saturation is medium-high but not garish. Model edges have outlines, which are darker shades of the material color and vary in thickness with distance. Distinct fingers with slightly rounded fingertips.
+2025-12-24 03:45:53.115 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_image_prompt
+2025-12-24 03:45:53.115 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:188 - 
+===========================
+生成NPC图片
+2025-12-24 03:46:04.813 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:224 - 
+===========================
+生成NPC图片完成
+2025-12-24 03:46:04.814 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_image_generator
+2025-12-24 03:46:04.815 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:230 - 
+===========================
+NPC图片评估
+2025-12-24 03:46:14.093 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:262 - 
+NPC图片评估: 
+is_ok=True feedback='该角色图片完全符合要求。背景纯白色，T-Pose站姿，正面全身，风格融合了塞尔达和宫崎骏动画的特点，无论是色彩饱和度、轮廓线还是身体比例，都达到了预期效果。角色为海利亚人，特征与设定一致。'
+2025-12-24 03:46:14.095 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_image_evaluator
+2025-12-24 03:46:14.096 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:268 - 
+===========================
+保存NPC图片
+2025-12-24 03:46:14.099 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:278 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\林克鲁\林克鲁.png
+2025-12-24 03:46:14.114 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: save_npc_image
+2025-12-24 03:46:14.115 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:284 - 
+===========================
+生成NPC模型
+2025-12-24 03:46:15.316 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+
+
+3D模型生成任务ID: 019b4c1a-b147-7016-8a88-c8782aca6158
+2025-12-24 03:46:15.698 | ERROR    | ui.npc_generation_page:main:706 - 工作流执行错误: 
+2025-12-24 03:47:52.894 | INFO     | workflows.generate_npc_workflow:_build_graph:404 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 03:47:52.897 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:58 - 
+===========================
+查询世界观资料
+2025-12-24 03:47:52.898 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:64 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 03:47:52.900 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: search_worldview
+2025-12-24 03:47:52.900 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:70 - 
+===========================
+查询模型风格资料
+2025-12-24 03:47:52.901 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:76 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 03:47:52.902 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: search_model_style
+2025-12-24 03:47:52.902 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:82 - 
+===========================
+查询相关背景资料
+2025-12-24 03:47:58.544 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:90 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 03:47:58.545 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: search_relevent_lore
+2025-12-24 03:47:58.545 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:96 - 
+===========================
+生成NPC角色档案
+2025-12-24 03:48:11.674 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+NPC json档案: 
+{'name': '艾尔文', 'race': '海利亚人', 'personality': '自信、热情且有些夸大其词的小商人，对自己的“传说武器”深信不疑。虽然言语间透露着稚气和对金钱的渴望，但本性善良且充满冒险精神。', 'background': '艾尔文是哈特诺村一个普通农户家的孩子。他从小就对村里铁匠铺的武器着迷，梦想着能成为一名伟大的武器商人。然而，普通的刀剑无法满足他的雄心壮志。他常常在村子附近的遗迹和废墟中探险，寻找那些“被遗忘的宝藏”。最近，他声称自己发现了一批“真正的传说武器”，并在村口摆起了小摊，试图向路过的冒险者们推销他的“顶级收藏”。尽管年纪尚幼，艾尔文对他的商品有着超越年龄的自信和热情。', 'opening_line': '嘿！路过的大哥大姐！想成为像林克一样的英雄吗？看看我这儿，这可是连加农都砍得动的顶级传说武器啊！绝对物超所值！', 'appearance': '艾尔文是个约莫七八岁的海利亚小男孩，留着一头棕色短发，有着海利亚人标志性的尖耳朵。他身形瘦小但充满活力，一双大大的、闪着精光的眼睛总是骨碌碌地转。他穿着一件沾着泥土和草屑的蓝色短袖束腰上衣，下面是磨旧的棕色短裤。腰间挂着一个小小的、似乎装满了“宝藏”的布袋。他的笑容带着一丝稚气和商人特有的精明，手里常常挥舞着一把对他来说略显沉重的小木剑，作为他“传说武器”的样本。'}
+2025-12-24 03:48:11.676 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 03:48:11.676 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:129 - 
+===========================
+NPC档案评估
+2025-12-24 03:48:23.384 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:147 - 
+NPC档案评估: 
+is_ok=True feedback=''
+2025-12-24 03:48:23.386 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 03:48:23.386 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:153 - 
+===========================
+保存NPC角色档案
+2025-12-24 03:48:23.388 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:162 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\艾尔文\艾尔文.json
+2025-12-24 03:48:23.390 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: save_npc_json
+2025-12-24 03:48:23.391 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:168 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 03:48:29.698 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:182 - 
+生成NPC图片的prompt: 
+A 7-8 year old Hylian boy named Elvin, in 50% Zelda style and 50% Ghibli style, stylized realistic art. He has brown short hair and pointed ears. He is small but energetic, with big, sparkling eyes. He wears a blue short-sleeved tunic stained with mud and grass, and worn brown shorts. A small pouch, seemingly filled with "treasures," hangs from his waist. He is holding a small wooden sword that is a bit heavy for him. His expression is confident, enthusiastic, and childlike, with a hint of merchant's cleverness. The character is in a T-pose, with arms spread out, full body view, against a pure white background. The art style should feature medium-high color saturation, distinct outlines that are a darker shade of the material color, and eyes with highlights. Proportionally, his head is slightly larger, and his hands and feet are a bit bigger, with a 6.0 to 6.5 head-to-body ratio, and about 20% of his face is taken by his clear-pupiled eyes.
+2025-12-24 03:48:29.700 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_image_prompt
+2025-12-24 03:48:29.700 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:188 - 
+===========================
+生成NPC图片
+2025-12-24 03:48:41.448 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:224 - 
+===========================
+生成NPC图片完成
+2025-12-24 03:48:41.449 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_image_generator
+2025-12-24 03:48:41.450 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:230 - 
+===========================
+NPC图片评估
+2025-12-24 03:48:50.251 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:262 - 
+NPC图片评估: 
+is_ok=True feedback='角色图像完全符合提供的`[model_style]`要求。背景纯白、T-Pose展开手臂、正面全身。比例上，角色符合海利亚人“6.0到6.5头身，头部略大，手脚掌略大”的描述，眼睛占比和简化处理的面部特征也吻合。色彩饱和度中等偏高，线条描边并非纯黑，而是材质深色版本。眼睛有高光，手指分明。整体风格兼具塞尔达系列的冒险感与宫崎骏作品的细腻手绘质感。'
+2025-12-24 03:48:50.253 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: generate_npc_image_evaluator
+2025-12-24 03:48:50.253 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:268 - 
+===========================
+保存NPC图片
+2025-12-24 03:48:50.256 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:278 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\艾尔文\艾尔文.png
+2025-12-24 03:48:50.269 | INFO     | ui.npc_generation_page:run_workflow_with_progress:643 - 工作流节点完成: save_npc_image
+2025-12-24 03:48:50.270 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:284 - 
+===========================
+生成NPC模型
+2025-12-24 03:48:51.435 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+
+
+3D模型生成任务ID: 019b4c1d-1339-7825-a620-f90e65941e63
+2025-12-24 03:48:51.603 | ERROR    | ui.npc_generation_page:main:706 - 工作流执行错误: 
+2025-12-24 19:18:27.753 | INFO     | workflows.generate_npc_workflow:_build_graph:404 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 19:18:27.757 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:58 - 
+===========================
+查询世界观资料
+2025-12-24 19:18:27.775 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:64 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 19:18:27.777 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: search_worldview
+2025-12-24 19:18:27.778 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:70 - 
+===========================
+查询模型风格资料
+2025-12-24 19:18:27.791 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:76 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 19:18:27.793 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: search_model_style
+2025-12-24 19:18:27.793 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:82 - 
+===========================
+查询相关背景资料
+2025-12-24 19:18:28.248 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:90 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 19:18:28.249 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: search_relevent_lore
+2025-12-24 19:18:28.250 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:96 - 
+===========================
+生成NPC角色档案
+2025-12-24 19:18:44.137 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+NPC json档案: 
+{'name': '米洛 (Milo)', 'race': '海利亚人', 'personality': '过度自信，有点自大，急于推销自己的商品，虽然童真却对“传说武器”有着超出年龄的执着，渴望成为英雄的引路人。', 'background': '米洛是哈特诺村一个海利亚男孩。他从小听爷爷讲述海拉鲁英雄们与传说武器的史诗故事。爷爷去世后，他继承了一些看起来独特、但实际来历不明的武器。米洛坚信这些就是爷爷口中的“顶级传说武器”，于是他决定在村口摆摊，梦想着能将它们卖给下一个拯救海拉鲁的伟大英雄，同时也能为自己赚取一点点心钱。他对自己的“宝贝”充满信心，即使它们看上去有些平平无奇。', 'opening_line': '“嘿！英雄！想不想看看真正的、能让加农颤抖的武器？我这儿可都是独一无二的宝贝！”', 'appearance': '米洛是一个大约八九岁的海利亚小男孩，身形瘦弱，一头略显蓬乱的棕色短发，脸上带着几颗雀斑。他的眼睛明亮而充满好奇，总是闪烁着精明和对冒险的向往。他穿着一件洗得发白的绿色亚麻短袖上衣和一条卡其色短裤，脚上是一双磨损的皮靴。他的脖子上挂着一个自制的木牌，上面用歪歪扭扭的字写着“传说武器”，旁边还画着一把夸张的剑，显得稚气又认真。'}
+2025-12-24 19:18:44.139 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 19:18:44.139 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:129 - 
+===========================
+NPC档案评估
+2025-12-24 19:18:52.920 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:147 - 
+NPC档案评估: 
+is_ok=True feedback='NPC设定与世界观、种族习性、模型风格保持高度一致。角色的年龄、种族、地理位置以及其独特的背景故事（继承“传说武器”并渴望遇到英雄）都合理地融入了《海拉鲁大陆》的世界观。外观描述也符合“塞尔达+宫崎骏”的风格化写实要求，特别是对眼睛、服装细节和自制标识的描述，都为角色塑造增添了鲜活感。'
+2025-12-24 19:18:52.923 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 19:18:52.923 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:153 - 
+===========================
+保存NPC角色档案
+2025-12-24 19:18:52.927 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:162 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\米洛 (Milo)\米洛 (Milo).json
+2025-12-24 19:18:52.928 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: save_npc_json
+2025-12-24 19:18:52.930 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:168 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 19:19:01.447 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:182 - 
+生成NPC图片的prompt: 
+背景纯白色，T-Pose，胳膊展开，正面全身，50%塞尔达风格+50%宫崎骏风格。一个名叫米洛的8-9岁海利亚小男孩，身形瘦弱，脸上有些雀斑，一头略显蓬乱的棕色短发。他拥有海利亚人标志性的尖耳朵，头部略大，整体比例约6-6.5头身。他的眼睛明亮，瞳孔清晰，有高光，充满好奇与对冒险的向往，占比面部约20%。鼻子和嘴巴简化处理，略带自信或自大的微笑。他穿着一件洗得发白的绿色亚麻短袖上衣和一条卡其色短裤，脚上是一双磨损的皮靴。脖子上挂着一个自制的木牌，上面用歪歪扭扭的字写着“传说武器”，旁边画着一把夸张的剑。整体体态干练，没有过多肌肉堆积，手部手指分明，指尖圆润。配色采用吉卜力式，色彩饱和度中等偏高，不明艳刺眼。衣服材质具有手绘风格的亚麻和皮革质感。模型边缘有描边，描边颜色是材质的深色版本。
+2025-12-24 19:19:01.449 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_image_prompt
+2025-12-24 19:19:01.449 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:188 - 
+===========================
+生成NPC图片
+2025-12-24 19:19:16.182 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:224 - 
+===========================
+生成NPC图片完成
+2025-12-24 19:19:16.183 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_image_generator
+2025-12-24 19:19:16.184 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:230 - 
+===========================
+NPC图片评估
+2025-12-24 19:19:28.000 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:262 - 
+NPC图片评估: 
+is_ok=True feedback='The character image adheres to all specified guidelines. The background is pure white, the character is in a T-Pose with arms spread, and it is a frontal full-body view. The art style effectively combines Zelda and Miyazaki influences with stylized realistic proportions. Specifically for a Hylian, the head-body ratio (estimated 5-6 heads for a child, aligning with "slightly larger head" for Hylians), slightly larger hands/feet, moderate shoulders, and detailed but simplified facial features (large, highlighted eyes, subtle nose/mouth) are all present. The coloring and outlines are consistent with the "Ghibli-style" and hand-drawn texture requirement. The visible sign also demonstrates physical equipment mounting.'
+2025-12-24 19:19:28.003 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_image_evaluator
+2025-12-24 19:19:28.003 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:268 - 
+===========================
+保存NPC图片
+2025-12-24 19:19:28.006 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:278 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\米洛 (Milo)\米洛 (Milo).png
+2025-12-24 19:19:28.018 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: save_npc_image
+2025-12-24 19:19:28.020 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:284 - 
+===========================
+生成NPC模型
+2025-12-24 19:19:29.229 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+
+
+3D模型生成任务ID: 019b4f71-129b-72a6-9a84-1b8b12ee2f71
+2025-12-24 19:19:29.696 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 1%
+2025-12-24 19:19:53.551 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 10%
+2025-12-24 19:20:02.437 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 20%
+2025-12-24 19:20:21.707 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 27%
+2025-12-24 19:20:21.752 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 30%
+2025-12-24 19:20:22.134 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 35%
+2025-12-24 19:20:22.176 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 45%
+2025-12-24 19:20:22.506 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 49%
+2025-12-24 19:21:12.490 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 50%
+2025-12-24 19:21:21.036 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 60%
+2025-12-24 19:21:37.085 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 61%
+2025-12-24 19:21:37.250 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 66%
+2025-12-24 19:21:37.510 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 71%
+2025-12-24 19:21:37.587 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 76%
+2025-12-24 19:21:37.829 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 81%
+2025-12-24 19:21:38.266 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 86%
+2025-12-24 19:21:59.169 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 96%
+2025-12-24 19:21:59.360 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 97%
+2025-12-24 19:22:04.374 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:319 - 
+3D模型生成进度 [STATUS] Task 99%
+2025-12-24 19:22:15.226 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:307 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 19:22:18.075 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:335 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\米洛 (Milo)\米洛 (Milo).glb
+2025-12-24 19:22:18.078 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_model
+2025-12-24 19:39:10.510 | INFO     | workflows.generate_npc_workflow:_build_graph:404 - 
+          +-----------+          
+          | __start__ |          
+          +-----------+          
+                *                
+                *                
+                *                
+      +------------------+       
+      | search_worldview |       
+      +------------------+       
+                *                
+                *                
+                *                
+     +--------------------+      
+     | search_model_style |      
+     +--------------------+      
+                *                
+                *                
+                *                
+    +----------------------+     
+    | search_relevent_lore |     
+    +----------------------+     
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_generator |  
++-----------------------------+  
+                *                
+                *                
+                *                
++-----------------------------+  
+| generate_npc_json_evaluator |  
++-----------------------------+  
+                .                
+                .                
+                .                
+        +---------------+        
+        | save_npc_json |        
+        +---------------+        
+                *                
+                *                
+                *                
+  +---------------------------+  
+  | generate_npc_image_prompt |  
+  +---------------------------+  
+                *                
+                *                
+                *                
++------------------------------+ 
+| generate_npc_image_generator | 
++------------------------------+ 
+                .                
+                .                
+                .                
++------------------------------+ 
+| generate_npc_image_evaluator | 
++------------------------------+ 
+                .                
+                .                
+                .                
+       +----------------+        
+       | save_npc_image |        
+       +----------------+        
+                *                
+                *                
+                *                
+     +--------------------+      
+     | generate_npc_model |      
+     +--------------------+      
+                *                
+                *                
+                *                
+          +---------+            
+          | __end__ |            
+          +---------+            
+2025-12-24 19:39:10.515 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:58 - 
+===========================
+查询世界观资料
+2025-12-24 19:39:10.517 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:64 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-24 19:39:10.519 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: search_worldview
+2025-12-24 19:39:10.520 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:70 - 
+===========================
+查询模型风格资料
+2025-12-24 19:39:10.521 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:76 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-24 19:39:10.523 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: search_model_style
+2025-12-24 19:39:10.523 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:82 - 
+===========================
+查询相关背景资料
+2025-12-24 19:39:11.512 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:90 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-24 19:39:11.514 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: search_relevent_lore
+2025-12-24 19:39:11.515 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:96 - 
+===========================
+生成NPC角色档案
+2025-12-24 19:39:22.153 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+NPC json档案: 
+{'name': '艾拉拉 (Elara)', 'race': '海利亚人 (精灵法师)', 'personality': '沉静内敛，智慧而神秘。她对古代魔法和海拉鲁的宿命轮回有着深刻的理解，言语中常带哲理，不易亲近但心怀正义。', 'background': '艾拉拉出生于海利亚家族，却自幼展现出对魔法的超凡天赋。她游历海拉鲁大陆，追寻古老智慧的残片，旨在理解和平衡特里福斯的命运循环。她常年隐匿，避免世俗纷扰，只在必要时现身。', 'opening_line': '命运的丝线在你的周围低语，旅行者。你，又将带来何种变数？', 'appearance': '艾拉拉身着古朴的深绿色长袍，兜帽遮盖了大半张脸。尖长的耳朵在银白色发丝间若隐若现。她手持一根镶嵌着发光魔石的木杖，眼神深邃如同星辰。比例符合海利亚人的风格化写实，气质超然。'}
+2025-12-24 19:39:22.154 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_json_generator
+2025-12-24 19:39:22.155 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:129 - 
+===========================
+NPC档案评估
+2025-12-24 19:39:32.715 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:147 - 
+NPC档案评估: 
+is_ok=True feedback='NPC描述与世界观、模型风格和种族习性设定基本一致。艾拉拉作为海利亚人却拥有超凡的魔法天赋，这在世界观中属于罕见但可接受的特例，因为海利亚人设定是“大多数人不会魔法”，而非“无人会魔法”。她的背景和性格与海拉鲁的命运循环核心设定紧密关联，形象刻画符合风格化写实的要求。'
+2025-12-24 19:39:32.717 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_json_evaluator
+2025-12-24 19:39:32.717 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:153 - 
+===========================
+保存NPC角色档案
+2025-12-24 19:39:32.719 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:162 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\艾拉拉 (Elara)\艾拉拉 (Elara).json
+2025-12-24 19:39:32.721 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: save_npc_json
+2025-12-24 19:39:32.722 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:168 - 
+===========================
+生成用于生成NPC图片的prompt
+2025-12-24 19:39:36.225 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_prompt:182 - 
+生成NPC图片的prompt: 
+A full body front view of Elara, a Hylian character. She is in a T-pose with arms extended. She wears an ancient dark green hooded robe that covers most of her face, with pointed ears subtly visible through her silver-white hair. She holds a staff embedded with a glowing magic stone. Her eyes are deep and mysterious like stars. The art style is 50% Zelda and 50% Studio Ghibli, with a stylized realistic aesthetic. Her proportions are a 6.0 to 6.5 head-to-body ratio, with a slightly larger head, hands, and feet, in line with Hylian characteristics. The image should have a pure white background.
+2025-12-24 19:39:36.225 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_image_prompt
+2025-12-24 19:39:36.227 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:188 - 
+===========================
+生成NPC图片
+2025-12-24 19:39:48.985 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:224 - 
+===========================
+生成NPC图片完成
+2025-12-24 19:39:48.988 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_image_generator
+2025-12-24 19:39:48.988 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:230 - 
+===========================
+NPC图片评估
+2025-12-24 19:40:06.385 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_evaluator:262 - 
+NPC图片评估: 
+is_ok=True feedback=''
+2025-12-24 19:40:06.386 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_image_evaluator
+2025-12-24 19:40:06.387 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:268 - 
+===========================
+保存NPC图片
+2025-12-24 19:40:06.390 | INFO     | workflows.generate_npc_workflow:_node_save_npc_image:278 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\艾拉拉 (Elara)\艾拉拉 (Elara).png
+2025-12-24 19:40:06.403 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: save_npc_image
+2025-12-24 19:40:06.403 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:284 - 
+===========================
+生成NPC模型
+2025-12-24 19:40:08.063 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:293 - 
+
+
+3D模型生成任务ID: 019b4f83-f825-7581-9497-a90570d5d0da
+2025-12-24 19:40:08.539 | INFO     | workflows.generate_npc_workflow:_sync_generate_and_poll:307 - 
+3D模型生成状态 [STATUS] Task SUCCEEDED
+2025-12-24 19:40:09.657 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_model:335 - 
+保存路径: 
+C:\Users\muzi_\Data\PyCharmData\TaTaProject_Refactored\data\npc_generation\艾拉拉 (Elara)\艾拉拉 (Elara).glb
+2025-12-24 19:40:09.659 | INFO     | ui.npc_generation_page:run_workflow_async:433 - 工作流节点完成: generate_npc_model
