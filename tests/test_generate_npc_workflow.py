@@ -1,8 +1,6 @@
 import asyncio
 import unittest
 
-from services import meshy_service
-from utils import FileUtil, logger
 from workflows.generate_npc_workflow import GenerateNpcWorkflow
 
 
@@ -13,6 +11,17 @@ class MyTestCase(unittest.TestCase):
 
     async def generate_npc_work_flow(self):
         interrupt_info = await self._workflow.ainvoke(self._prompt)
+        number = input(f"\n中断信息: \n{interrupt_info["npc_json"]}\n"
+                       f"是否通过?(1通过/2拒绝)")
+        if number == "1":
+            is_ok = True
+            feedback = None
+        else:
+            is_ok = False
+            feedback = input(f"\n请输入修改意见: ")
+
+        interrupt_info = await self._workflow.ainvoke_continue({"is_ok": is_ok, "feedback": feedback})
+
         number = input(f"\n中断信息: \n{interrupt_info}\n"
                        f"是否通过?(1通过/2拒绝)")
         if number == "1":
@@ -22,14 +31,43 @@ class MyTestCase(unittest.TestCase):
             is_ok = False
             feedback = input(f"\n请输入修改意见: ")
 
-        await self._workflow.ainvoke_continue({"is_ok": is_ok, "feedback": feedback})
+        interrupt_info = await self._workflow.ainvoke_continue({"is_ok": is_ok, "feedback": feedback})
+
+        number = input(f"\n中断信息: \n{interrupt_info}\n"
+                       f"是否通过?(1通过/2拒绝)")
+        if number == "1":
+            is_ok = True
+            feedback = None
+        else:
+            is_ok = False
+            feedback = input(f"\n请输入修改意见: ")
+
+        interrupt_info = await self._workflow.ainvoke_continue({"is_ok": is_ok, "feedback": feedback})
+
+        number = input(f"\n中断信息: \n{interrupt_info}\n"
+                       f"是否通过?(1通过/2拒绝)")
+        if number == "1":
+            is_ok = True
+            feedback = None
+        else:
+            is_ok = False
+            feedback = input(f"\n请输入修改意见: ")
+
+        interrupt_info = await self._workflow.ainvoke_continue({"is_ok": is_ok, "feedback": feedback})
+
+        number = input(f"\n中断信息: \n{interrupt_info}\n"
+                       f"是否通过?(1通过/2拒绝)")
+        if number == "1":
+            is_ok = True
+            feedback = None
+        else:
+            is_ok = False
+            feedback = input(f"\n请输入修改意见: ")
+
+        interrupt_info = await self._workflow.ainvoke_continue({"is_ok": is_ok, "feedback": feedback})
 
     def test_generate_npc_work_flow(self):
         asyncio.run(self.generate_npc_work_flow())
-
-
-
-
 
 
     # def test_generate_npc_model(self):

@@ -1,0 +1,66 @@
+2025-12-29 23:19:13.787 | INFO     | workflows.generate_npc_workflow:_node_initialize:57 - 
+===========================
+初始化节点
+2025-12-29 23:19:13.788 | INFO     | workflows.generate_npc_workflow:_node_initialize:79 - 
+初始state: 
+{'prompt': '一个照顾花田的利特族人,不允许任何人触碰', 'worldview': '', 'model_style': '', 'npc_relevent_lore': '', 'npc_json': {}, 'npc_json_is_ok': False, 'npc_json_feedback': '', 'npc_json_path': '', 'npc_image_prompt': '', 'npc_image_prompt_is_ok': False, 'npc_image_prompt_feedback': '', 'npc_image_base64': '', 'npc_image_is_ok': False, 'npc_image_feedback': '', 'npc_image_path': '', 'npc_model_path': ''}
+2025-12-29 23:19:13.791 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:85 - 
+===========================
+查询世界观资料
+2025-12-29 23:19:13.798 | INFO     | workflows.generate_npc_workflow:_node_search_worldview:91 - 
+世界观: 
+《海拉鲁大陆 (Hyrule)》世界观设定文档
+1. 核心神话与背景
+创世传说： 世界由三位黄金女神创造（力量、智慧、勇气）。她们离开时留下了三角神力 (Triforce)，这是一种能实现持有者愿望的
+2025-12-29 23:19:13.799 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:97 - 
+===========================
+查询模型风格资料
+2025-12-29 23:19:13.802 | INFO     | workflows.generate_npc_workflow:_node_search_model_style:103 - 
+模型风格: 
+[重要]: 角色图片必须遵循:
+    - 背景纯白色
+    - T-Pose,胳膊必须展开
+    - 正面全身
+    - 50%塞尔达风格+50%宫崎骏风格
+
+1. 基础模型比例 (Propo
+2025-12-29 23:19:13.803 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:109 - 
+===========================
+查询相关背景资料
+2025-12-29 23:19:14.309 | INFO     | workflows.generate_npc_workflow:_node_search_relevent_lore:117 - 
+相关背景资料: 
+种族习性：
+
+喜欢： 恶作剧、藏在石头底下、跳舞、给伯库林沙锤伴舞。
+
+讨厌： 被忽视、森林被破坏。
+
+害怕： 迷路、火焰。
+
+生理/逻辑规则：
+
+隐形： 普通人类很难看见它们，只有心灵纯净或拥有特殊
+2025-12-29 23:19:14.313 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:123 - 
+===========================
+生成NPC角色档案
+2025-12-29 23:19:28.784 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_generator:150 - 
+NPC json档案: 
+{'name': '蒂利欧', 'race': '利特族', 'personality': '蒂利欧是一位对自己的花田充满骄傲和占有欲的利特族人。他性情温和，但在涉及到他心爱的花朵时，会变得异常警惕和固执，不容许任何外人轻率触碰。他将利特族对自由的向往和对美的追求，都倾注在了这片高空中的花海里。', 'background': '蒂利欧曾是利特村技艺高超的弓箭手，但一次意外的伤病导致他无法再像过去那样自由翱翔于天空。他因此退居到一处高山之巅，意外地发现了一片独特的风之花种群。他将所有的热情都投入到这片花田的照料中，将其视为自己灵魂的延伸和对天空的另一种守护，日夜与风语花为伴。', 'opening_line': '风儿带来了不速之客的气味。我劝你，离我的花远一点，别让它们沾染了尘世的喧嚣。', 'appearance': '蒂利欧是一位体型中等的利特族男性，全身覆盖着柔和的米色羽毛，翅膀宽大而优雅。他的喙呈浅灰色，眼睛锐利而专注，眼角常带着一丝警惕。他穿着一件朴素的麻布背心和一条皮质短裤，腰间系着一个装有园艺工具的小包。他的羽毛上偶尔能看到花粉的痕迹，头上别着一朵他所培育的、在风中摇曳的独特花朵。他的站姿笔挺，即使无法自由飞翔，也依然保持着利特族特有的高傲与警觉。'}
+2025-12-29 23:19:28.788 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:156 - 
+===========================
+NPC档案评估
+2025-12-29 23:19:37.364 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_evaluator:174 - 
+NPC档案评估: 
+is_ok=True feedback='None'
+2025-12-29 23:19:54.051 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_json_human_evaluation:187 - 
+用户对npc_json的确认信息: 
+{'is_ok': True, 'feedback': None}
+2025-12-29 23:19:54.055 | INFO     | workflows.generate_npc_workflow:_node_generate_npc_image_generator:242 - 
+===========================
+生成NPC图片
+2025-12-29 23:19:54.056 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:194 - 
+===========================
+保存NPC角色档案
+2025-12-29 23:19:54.060 | INFO     | workflows.generate_npc_workflow:_node_save_npc_json:203 - 
+保存路径: 
+C:\Users\muzi_\Data\PycharmData\TaTa\data\npc_generation\蒂利欧\蒂利欧.json
