@@ -2,40 +2,21 @@ import asyncio
 import base64
 from typing import TypedDict
 
-import langchain_core.utils._merge as merge_utils
 from google import genai
+from google.api_core.exceptions import ResourceExhausted, ServiceUnavailable
 from langchain.chat_models import init_chat_model
 from langchain_core.callbacks import adispatch_custom_event
 from langchain_core.messages import HumanMessage
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.constants import START, END
 from langgraph.graph import StateGraph
-from langgraph.types import Command, interrupt
+from langgraph.types import Command, interrupt, RetryPolicy
 
 from config import settings
 from core import create_retriever, NPCGenerationResponseStructure, EvaluatorResponseStructure, \
     ImageGeneratePromptResponseStructure
 from services import meshy_service
 from utils import FileUtil, logger
-
-
-def patched_merge_dicts(left, *others):
-    merged = left.copy()
-    for right in others:
-        for k, v in right.items():
-            if k not in merged or (v is not None and merged[k] is None):
-                merged[k] = v
-            # 这里的修复逻辑是：如果是数字类型（int或float），直接累加或取最新值
-            elif isinstance(v, (int, float)):
-                merged[k] = v
-            elif isinstance(merged[k], dict) and isinstance(v, dict):
-                merged[k] = patched_merge_dicts(merged[k], v)
-            else:
-                merged[k] = v
-    return merged
-
-
-merge_utils.merge_dicts = patched_merge_dicts
 
 
 class State(TypedDict):
@@ -65,7 +46,17 @@ class GenerateNpcWorkflow:
         self._fs = FileUtil(self._settings.paths.npc_generation_data)
         self._retriever = create_retriever()
         self._model = init_chat_model(model=self._settings.models.chat_model)
-        self._optimize_image_model = init_chat_model(model=self._settings.models.image_model)
+        self._optimize_image_model = init_chat_model(
+            model=self._settings.models.image_model,
+            streaming=False,
+            model_kwargs={
+                "response_modalities": [2],
+                "image_generation_config": {
+                    "aspect_ratio": "16:9",
+                    "output_mime_type": "image/jpeg"
+                }
+            }
+        )
         self._3d_model = meshy_service
 
         self.app = self._build_graph()
@@ -286,15 +277,20 @@ class GenerateNpcWorkflow:
                 return client.models.generate_images(
                     model=self._settings.models.imagen_model,
                     prompt=state["npc_image_prompt"],
-                    config={"number_of_images": self._settings.models.imagen_number_of_images}
+                    config={
+                        "aspect_ratio": "1:1",
+                        "output_mime_type": "image/jpeg",
+                        "number_of_images": self._settings.models.imagen_number_of_images
+                    }
                 )
 
             response = await asyncio.to_thread(_generate_image)
             npc_image_bytes = response.generated_images[0].image.image_bytes
             npc_image_base64 = base64.b64encode(npc_image_bytes).decode('utf-8')
         else:
+            self._fs.write_image("asdasdasdasdasd.jpeg", state["npc_image_base64"])
             system_prompt = ("你是一个资深的游戏设计师,精通游戏角色图片设计.\n\n"
-                             "目标是根据当前生成的npc图片[npc_image_base64]和反馈[feedback]优化jpeg图片.")
+                             "目标是根据当前生成的npc图片[npc_image_base64]和反馈[feedback]优化图片,图片格式为jpeg.")
             generate_npc_image_model = (
                 self._optimize_image_model
                 .bind(system_prompt=system_prompt))
@@ -307,9 +303,13 @@ class GenerateNpcWorkflow:
                     "image_url": {"url": f"data:image/jpeg;base64,{state["npc_image_base64"]}"},
                 }
             ])])
-            npc_image_base64 = response.content[0].get("image_url").get("url")
+            npc_image_url = response.content[0].get("image_url").get("url")
+            if "," in npc_image_url:
+                npc_image_base64 = npc_image_url.split(",")[1]
+            else:
+                npc_image_base64 = npc_image_url
 
-        logger.info(f"\n===========================\n生成NPC图片完成")
+        logger.info(f"\n===========================\n生成NPC图片完成: {npc_image_base64[:50]}")
 
         return {"npc_image_base64": npc_image_base64}
 
@@ -327,11 +327,11 @@ class GenerateNpcWorkflow:
                          "\t - 必须是正面全身\n"
                          "\t - 50%塞尔达风格+50%宫崎骏风格\n\n"
                          "如果不符合标准,请给出具体的修改意见.")
-        generate_npc_json_model = (self._model
-                                   .with_structured_output(EvaluatorResponseStructure)
-                                   .bind(system_prompt=system_prompt))
+        generate_npc_image_evaluator_model = (self._model
+                                              .with_structured_output(EvaluatorResponseStructure)
+                                              .bind(system_prompt=system_prompt))
 
-        response = await generate_npc_json_model.ainvoke([HumanMessage(content=[
+        response = await generate_npc_image_evaluator_model.ainvoke([HumanMessage(content=[
             {
                 "type": "text",
                 "text": f"[worldview]: {state["worldview"]}\n\n",
@@ -353,6 +353,7 @@ class GenerateNpcWorkflow:
 
     async def _node_generate_npc_image_human_evaluation(self, state: State):
         """NPC图片人工评估"""
+        logger.info("\n===========================\nNPC图片人工评估")
         response = interrupt({
             "question": "是否满意目前生成的NPC图片信息?",
             "details": state["npc_image_base64"]
@@ -444,25 +445,43 @@ class GenerateNpcWorkflow:
     # Build Graph
     # ====================
     def _build_graph(self):
+        # 失败重试策略
+        retry_policy = RetryPolicy(
+            max_attempts=3,  # 包括第一次尝试在内的总次数
+            initial_interval=1.0,  # 第一次重试前的等待时间（秒）
+            backoff_factor=2.0,  # 每次重试等待时间的倍数
+            retry_on=(
+                ResourceExhausted,  # 429 频率限制
+                ServiceUnavailable,  # 503 服务器过载
+                ConnectionError,  # 网络掉线
+                TimeoutError  # 请求超时
+            )
+        )
         graph = StateGraph(State)
 
         # 添加节点
-        graph.add_node("initialize", self._node_initialize)
-        graph.add_node("search_worldview", self._node_search_worldview)
-        graph.add_node("search_model_style", self._node_search_model_style)
-        graph.add_node("search_relevent_lore", self._node_search_relevent_lore)
-        graph.add_node("generate_npc_json_generator", self._node_generate_npc_json_generator)
-        graph.add_node("generate_npc_json_evaluator", self._node_generate_npc_json_evaluator)
-        graph.add_node("generate_npc_json_human_evaluation", self._node_generate_npc_json_human_evaluation)
-        graph.add_node("save_npc_json", self._node_save_npc_json)
-        graph.add_node("generate_npc_image_prompt", self._node_generate_npc_image_prompt)
-        graph.add_node("generate_npc_image_prompt_human_evaluation",
-                       self._node_generate_npc_image_prompt_human_evaluation)
-        graph.add_node("generate_npc_image_generator", self._node_generate_npc_image_generator)
-        graph.add_node("generate_npc_image_evaluator", self._node_generate_npc_image_evaluator)
-        graph.add_node("generate_npc_image_human_evaluation", self._node_generate_npc_image_human_evaluation)
-        graph.add_node("save_npc_image", self._node_save_npc_image)
-        graph.add_node("generate_npc_model", self._node_generate_npc_model)
+        graph.add_node(node="initialize", action=self._node_initialize)
+        graph.add_node(node="search_worldview", action=self._node_search_worldview)
+        graph.add_node(node="search_model_style", action=self._node_search_model_style)
+        graph.add_node(node="search_relevent_lore", action=self._node_search_relevent_lore)
+        graph.add_node(node="generate_npc_json_generator", action=self._node_generate_npc_json_generator,
+                       retry_policy=retry_policy)
+        graph.add_node(node="generate_npc_json_evaluator", action=self._node_generate_npc_json_evaluator,
+                       retry_policy=retry_policy)
+        graph.add_node(node="generate_npc_json_human_evaluation", action=self._node_generate_npc_json_human_evaluation)
+        graph.add_node(node="save_npc_json", action=self._node_save_npc_json)
+        graph.add_node(node="generate_npc_image_prompt", action=self._node_generate_npc_image_prompt,
+                       retry_policy=retry_policy)
+        graph.add_node(node="generate_npc_image_prompt_human_evaluation",
+                       action=self._node_generate_npc_image_prompt_human_evaluation)
+        graph.add_node(node="generate_npc_image_generator", action=self._node_generate_npc_image_generator,
+                       retry_policy=retry_policy)
+        graph.add_node(node="generate_npc_image_evaluator", action=self._node_generate_npc_image_evaluator,
+                       retry_policy=retry_policy)
+        graph.add_node(node="generate_npc_image_human_evaluation",
+                       action=self._node_generate_npc_image_human_evaluation)
+        graph.add_node(node="save_npc_image", action=self._node_save_npc_image)
+        graph.add_node(node="generate_npc_model", action=self._node_generate_npc_model)
         # 线性连接
         graph.add_edge(START, "initialize")
         graph.add_edge("initialize", "search_worldview")
@@ -551,7 +570,7 @@ class GenerateNpcWorkflow:
     async def astream_events(self, prompt: str):
         """异步流式运行"""
         async for _ in self.app.astream_events(input={"prompt": prompt},
-                                               config={"configurable": {"thread_id": self._thread_id}}, version="v2"):
+                                               config={"configurable": {"thread_id": self._thread_id}}):
             kind = _.get("event")
             if kind == "on_chat_model_stream" or kind == "on_custom_event":
                 yield _
@@ -559,7 +578,7 @@ class GenerateNpcWorkflow:
     async def astream_events_continue(self, resume: dict):
         """继续异步运行"""
         async for _ in self.app.astream_events(Command(resume=resume),
-                                               config={"configurable": {"thread_id": self._thread_id}}, version="v2"):
+                                               config={"configurable": {"thread_id": self._thread_id}}):
             kind = _.get("event")
             if kind == "on_chat_model_stream" or kind == "on_custom_event":
                 yield _
