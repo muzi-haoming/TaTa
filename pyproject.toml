@@ -7,31 +7,41 @@ name = "tata-project"
 version = "1.0.0"
 readme = "README.md"
 requires-python = ">=3.12"
-license = {text = "MIT"}
+license = { text = "MIT" }
 authors = [
-    {name = "959"}
+    { name = "959" }
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
 
+# 与 requirements.txt 保持一致
 dependencies = [
     "streamlit",
-    "google-cloud-aiplatform",
-    "vertexai",
-    "langchain-google-genai",
     "langchain",
     "langchain-core",
     "langchain-community",
-    "chromadb",
     "langchain-chroma",
     "langchain-text-splitters",
+    "langchain-google-genai",
+    "langchain-google-vertexai",
+    "langgraph",
+    "google-cloud-aiplatform",
+    "vertexai",
+    "chromadb",
+    "loguru",
+    "pydantic",
+    "pydantic-settings",
+    "pyyaml",
+    "requests",
+    "aiohttp",
+    "aiofiles",
+    "protobuf",
+    "grandalf",
 ]
 
 [project.optional-dependencies]
@@ -42,14 +52,24 @@ dev = [
     "mypy",
     "black",
     "ruff",
+    "ipython",
 ]
-
-#[project.scripts]
-#tata-ingest = "ingest:main"
+automation = [
+    "pyautogui",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["config*", "core*", "middlewares*", "tools*", "utils*", "ui*"]
+include = [
+    "config*",
+    "core*",
+    "middlewares*",
+    "services*",
+    "tools*",
+    "utils*",
+    "ui*",
+    "workflows*",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -63,10 +83,18 @@ warn_unused_configs = true
 ignore_missing_imports = true
 
 [tool.black]
-line-length = 88
+line-length = 120
 target-version = ['py312']
 
 [tool.ruff]
-line-length = 88
-select = ["E", "F", "W", "I", "N"]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B"]
 ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# 交互式脚本与测试允许直接 print / 使用宽泛的 except
+"scripts/*" = ["T201"]
+"tests/*" = ["N802"]

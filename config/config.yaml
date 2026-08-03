@@ -1,0 +1,38 @@
+# embedding model configuration
+embedding_model:
+  base_url: "http://127.0.0.1:12310"
+  embed_url: "/embed"
+  health_url: "/health"
+  dimension: 512
+
+
+
+# Milvus configuration
+milvus:
+  base_url: "http://127.0.0.1:19530"
+  
+
+
+
+# Text splitting configuration
+text_splitter:
+  chunk_size: 400
+  chunk_overlap: 50
+  separators: ["\n\n", "\n", "。", "！", "？", "；", "，", "、", ". ", "! ", "? ", "; ", ", ", " ", ""]
+
+
+
+# LLM configuration
+lite_llm:
+  base_url: "https://router.huggingface.co/v1"
+  model_name: "Qwen/Qwen3-8B"
+  model_provider: "huggingface"
+  temperature: 0.5
+
+
+
+# RAG configuration
+rag:
+  collection_name:
+    background_info: "background_info_collection"
+  bm25_index_path: "data/bm25_index.pkl"

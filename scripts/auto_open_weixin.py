@@ -1,6 +1,13 @@
-import pyautogui
+"""
+通过任务栏搜索打开桌面应用的自动化脚本（需要 pyautogui：``pip install pyautogui``）
+
+运行::
+
+    python -m scripts.auto_open_weixin
+"""
 import time
-import sys
+
+import pyautogui
 
 # 设置pyautogui的故障保护机制。当鼠标移动到屏幕左上角(0,0)时，程序将中止。
 pyautogui.FAILSAFE = True

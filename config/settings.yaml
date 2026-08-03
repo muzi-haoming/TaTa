@@ -62,3 +62,22 @@ paths:
 ui:
   default_thread_id: "959"
   stream_delay: 0.01
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# embedding model configuration
+embedding_model:
+  base_url: "http://127.0.0.1:12310"

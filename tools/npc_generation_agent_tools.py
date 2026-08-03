@@ -1,6 +1,7 @@
+"""NPC 生成 Agent 可调用的工具"""
 from langchain.tools import tool
 
-from core import create_retriever
+from core import search_lore
 
 
 @tool
@@ -12,7 +13,4 @@ def search_relevent_lore(query_content: str) -> str:
 
     返回：相关背景资料片段
     """
-    retriever = create_retriever()
-    docs = retriever.invoke(query_content)
-    results = f"{"\n\n".join(doc.page_content for doc in docs)}"
-    return results
+    return search_lore(query_content)

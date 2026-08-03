@@ -1,584 +1,372 @@
+"""
+NPC 生成工作流
+
+流程：检索参考资料 -> 生成角色档案 -> 自动评估 + 人工审核 -> 落盘
+      -> 生成图片提示词 -> 人工审核 -> 生成图片 -> 自动评估 + 人工审核 -> 落盘
+      -> 生成 3D 模型
+
+通用节点（参考资料 / 生成 / 评估 / 人工审核 / 落盘 / 路由）由 :class:`workflows.base.LlmWorkflow`
+提供，本模块只声明各节点的差异（提示词、字段、结构化输出）以及图的连线。
+"""
 import asyncio
 import base64
-from typing import TypedDict
+from typing import Any, Dict, Optional, Tuple, Type
 
 from google import genai
 from google.api_core.exceptions import ResourceExhausted, ServiceUnavailable
 from langchain.chat_models import init_chat_model
 from langchain_core.callbacks import adispatch_custom_event
 from langchain_core.messages import HumanMessage
-from langgraph.checkpoint.memory import MemorySaver
-from langgraph.constants import START, END
+from langgraph.constants import END, START
 from langgraph.graph import StateGraph
-from langgraph.types import Command, interrupt, RetryPolicy
 
 from config import settings
-from core import create_retriever, NPCGenerationResponseStructure, EvaluatorResponseStructure, \
-    ImageGeneratePromptResponseStructure
-from services import meshy_service
-from utils import FileUtil, logger
+from core import (
+    EvaluatorResponseStructure,
+    ImageGeneratePromptResponseStructure,
+    NPCGenerationResponseStructure,
+    asearch_lore,
+    prompts,
+)
+from services import TERMINAL_STATUSES, meshy_service
+from utils import logger
+
+from .base import (
+    ACCEPTED,
+    REJECTED,
+    EvaluatorSpec,
+    GeneratorSpec,
+    LlmWorkflow,
+    ReferenceSpec,
+    ReviewSpec,
+    SaveSpec,
+    Section,
+)
+from .state import NpcState, initial_state
+
+#: 3D 模型生成进度事件名（前端通过 ``astream_events`` 消费）
+MODEL_PROGRESS_EVENT = "generate_npc_model_progress"
+
+#: 生成图片时使用的图片格式（MIME 子类型与文件扩展名同源）
+_IMAGE_MIME_SUBTYPE = "jpeg"
+_IMAGE_SUFFIX = f".{_IMAGE_MIME_SUBTYPE}"
+
+#: 参与提示词的公共资料段
+_WORLDVIEW = Section("worldview", "worldview")
+_MODEL_STYLE = Section("model_style", "model_style")
+_RELEVENT_LORE = Section("npc_relevent_lore", "npc_relevent_lore")
+_NPC_JSON = Section("npc_json", "npc_json")
+# 注意：标签沿用历史拼写 "promot"，改动即等于改动提示词，保持原样以免影响生成效果
+_PROMPT = Section("promot", "prompt")
+
+_LORE_SECTIONS: Tuple[Section, ...] = (_WORLDVIEW, _MODEL_STYLE, _RELEVENT_LORE)
 
 
-class State(TypedDict):
-    prompt: str
-    worldview: str
-    model_style: str
-    npc_relevent_lore: str
-    npc_json: dict
-    npc_json_is_ok: bool
-    npc_json_feedback: str
-    npc_json_path: str
-    npc_image_prompt: str
-    npc_image_prompt_is_ok: bool
-    npc_image_prompt_feedback: str
-    npc_image_base64: str
-    npc_image_is_ok: bool
-    npc_image_feedback: str
-    npc_image_path: str
-    npc_model_path: str
+# ====================
+# 节点声明（纯数据，与实例无关）
+# ====================
+
+REFERENCE_SPECS: Tuple[ReferenceSpec, ...] = (
+    ReferenceSpec("查询世界观资料", "worldview", settings.paths.worldview_file),
+    ReferenceSpec("查询模型风格资料", "model_style", settings.paths.model_style_file),
+)
+
+NPC_JSON_GENERATOR_SPEC = GeneratorSpec(
+    log_label="生成NPC角色档案",
+    result_label="NPC json档案",
+    schema=NPCGenerationResponseStructure,
+    target_key="npc_json",
+    generate_prompt=prompts.NPC_JSON_GENERATE,
+    refine_prompt=prompts.NPC_JSON_REFINE,
+    sections=(_PROMPT, *_LORE_SECTIONS),
+    refine_sections=(_NPC_JSON, Section("feedback", "npc_json_feedback")),
+    extract=lambda response: response.model_dump(),
+)
+
+NPC_JSON_EVALUATOR_SPEC = EvaluatorSpec(
+    log_label="NPC档案评估",
+    schema=EvaluatorResponseStructure,
+    system_prompt=prompts.NPC_JSON_EVALUATE,
+    sections=(_PROMPT, *_LORE_SECTIONS, _NPC_JSON),
+    flag_key="npc_json_is_ok",
+    feedback_key="npc_json_feedback",
+)
+
+NPC_IMAGE_PROMPT_GENERATOR_SPEC = GeneratorSpec(
+    log_label="生成用于生成NPC图片的prompt",
+    result_label="生成NPC图片的prompt",
+    schema=ImageGeneratePromptResponseStructure,
+    target_key="npc_image_prompt",
+    generate_prompt=prompts.NPC_IMAGE_PROMPT_GENERATE,
+    refine_prompt=prompts.NPC_IMAGE_PROMPT_REFINE,
+    sections=(*_LORE_SECTIONS, _NPC_JSON),
+    refine_sections=(
+        Section("npc_image_prompt", "npc_image_prompt"),
+        Section("feedback", "npc_image_prompt_feedback"),
+    ),
+    extract=lambda response: response.prompt,
+)
+
+NPC_IMAGE_EVALUATOR_SPEC = EvaluatorSpec(
+    log_label="NPC图片评估",
+    schema=EvaluatorResponseStructure,
+    system_prompt=prompts.NPC_IMAGE_EVALUATE,
+    sections=_LORE_SECTIONS,
+    flag_key="npc_image_is_ok",
+    feedback_key="npc_image_feedback",
+    image_key="npc_image_base64",
+)
+
+#: 人工审核节点：节点名 -> 声明
+REVIEW_SPECS: Dict[str, ReviewSpec] = {
+    "generate_npc_json_human_evaluation": ReviewSpec(
+        log_label="NPC档案人工评估",
+        question="是否满意目前生成的NPC角色信息?",
+        detail_key="npc_json",
+        flag_key="npc_json_is_ok",
+        feedback_key="npc_json_feedback",
+    ),
+    "generate_npc_image_prompt_human_evaluation": ReviewSpec(
+        log_label="NPC图片prompt人工评估",
+        question="是否满意目前生成的NPC生成图片的提示词?",
+        detail_key="npc_image_prompt",
+        flag_key="npc_image_prompt_is_ok",
+        feedback_key="npc_image_prompt_feedback",
+    ),
+    "generate_npc_image_human_evaluation": ReviewSpec(
+        log_label="NPC图片人工评估",
+        question="是否满意目前生成的NPC图片信息?",
+        detail_key="npc_image_base64",
+        flag_key="npc_image_is_ok",
+        feedback_key="npc_image_feedback",
+    ),
+}
 
 
-class GenerateNpcWorkflow:
-    def __init__(self, thread_id: str = "959"):
-        # 环境变量通过config模块自动设置
-        self._thread_id = thread_id
-        self._settings = settings
-        self._fs = FileUtil(self._settings.paths.npc_generation_data)
-        self._retriever = create_retriever()
-        self._model = init_chat_model(model=self._settings.models.chat_model)
+class GenerateNpcWorkflow(LlmWorkflow):
+    """NPC 角色生成工作流（档案 + 图片 + 3D 模型）。"""
+
+    state_schema: Type = NpcState
+    input_key = "prompt"
+    workspace_dir = settings.paths.npc_generation_data
+    graph_image_name = "workflows.png"
+
+    # Vertex AI 侧的可重试异常
+    retry_on = (
+        ResourceExhausted,   # 429 频率限制
+        ServiceUnavailable,  # 503 服务器过载
+        ConnectionError,     # 网络掉线
+        TimeoutError,        # 请求超时
+    )
+
+    def __init__(self, thread_id: Optional[str] = None, **kwargs: Any):
         self._optimize_image_model = init_chat_model(
-            model=self._settings.models.image_model,
+            model=settings.models.image_model,
             streaming=False,
             model_kwargs={
                 "response_modalities": [2],
                 "image_generation_config": {
                     "aspect_ratio": "16:9",
-                    "output_mime_type": "image/jpeg"
-                }
-            }
+                    "output_mime_type": "image/jpeg",
+                },
+            },
         )
-        self._3d_model = meshy_service
-
-        self.app = self._build_graph()
+        self._mesh_service = meshy_service
+        super().__init__(thread_id=thread_id, **kwargs)
 
     # ====================
-    # Nodes
+    # 节点声明（依赖实例的部分）
     # ====================
-    async def _node_initialize(self, state: State):
-        """初始化节点"""
-        logger.info("\n===========================\n初始化节点")
-
-        default_state = {
-            "prompt": "",
-            "worldview": "",
-            "model_style": "",
-            "npc_relevent_lore": "",
-            "npc_json": {},
-            "npc_json_is_ok": False,
-            "npc_json_feedback": "",
-            "npc_json_path": "",
-            "npc_image_prompt": "",
-            "npc_image_prompt_is_ok": False,
-            "npc_image_prompt_feedback": "",
-            "npc_image_base64": "",
-            "npc_image_is_ok": False,
-            "npc_image_feedback": "",
-            "npc_image_path": "",
-            "npc_model_path": ""
+    def _save_specs(self) -> Dict[str, SaveSpec]:
+        """落盘节点声明；``writer`` 绑定到本实例的文件沙箱。"""
+        return {
+            "save_npc_json": SaveSpec(
+                log_label="保存NPC角色档案",
+                flag_key="npc_json_is_ok",
+                value_key="npc_json",
+                target_key="npc_json_path",
+                suffix=".json",
+                writer=self._fs.write_json,
+            ),
+            "save_npc_image": SaveSpec(
+                log_label="保存NPC图片",
+                flag_key="npc_image_is_ok",
+                value_key="npc_image_base64",
+                target_key="npc_image_path",
+                suffix=_IMAGE_SUFFIX,
+                writer=self._fs.write_image,
+            ),
         }
 
-        state = {**default_state, **state}
-        logger.info(f"\n初始state: \n{state}")
+    # ====================
+    # 专有节点
+    # ====================
+    async def _node_search_relevent_lore(self, state: NpcState) -> Dict[str, Any]:
+        """查询相关背景资料（向量检索）"""
+        self._log_step("查询相关背景资料")
 
-        return state
-
-    async def _node_search_worldview(self, state: State):
-        """查询世界观资料"""
-        logger.info("\n===========================\n查询世界观资料")
-
-        worldview = state["worldview"]
-        if not worldview:
-            worldview = await asyncio.to_thread(self._fs.read_text, self._settings.paths.worldview_file)
-
-        logger.info(f"\n世界观: \n{worldview[:100]}")
-
-        return {"worldview": worldview}
-
-    async def _node_search_model_style(self, state: State):
-        """查询模型风格资料"""
-        logger.info("\n===========================\n查询模型风格资料")
-
-        model_style = state["model_style"]
-        if not model_style:
-            model_style = await asyncio.to_thread(self._fs.read_text, self._settings.paths.model_style_file)
-
-        logger.info(f"\n模型风格: \n{model_style[:100]}")
-
-        return {"model_style": model_style}
-
-    async def _node_search_relevent_lore(self, state: State):
-        """查询相关背景资料"""
-        logger.info("\n===========================\n查询相关背景资料")
-
-        prompt = state["prompt"]
         npc_relevent_lore = state["npc_relevent_lore"]
         if not npc_relevent_lore:
-            docs = await self._retriever.ainvoke(prompt)
-            npc_relevent_lore = f"{"\n\n".join(doc.page_content for doc in docs)}"
+            npc_relevent_lore = await asearch_lore(state["prompt"])
 
-        logger.info(f"\n相关背景资料: \n{npc_relevent_lore[:100]}")
-
+        logger.info(f"\n相关背景资料: \n{self._preview(npc_relevent_lore)}")
         return {"npc_relevent_lore": npc_relevent_lore}
 
-    async def _node_generate_npc_json_generator(self, state: State):
-        """生成NPC角色档案"""
-        logger.info("\n===========================\n生成NPC角色档案")
-        has_existing = bool(state["npc_json"])
-        if not has_existing:
-            system_prompt = ("你是一个资深的游戏设计师,精通游戏角色档案设计.\n\n"
-                             "目标是结合世界观[worldview],模型风格[model_style]和npc背景资料[npc_relevent_lore],根据输入[prompt]生成一个角色档案.")
+    async def _node_generate_npc_image_generator(self, state: NpcState) -> Dict[str, Any]:
+        """生成NPC图片：首次走 Imagen 文生图，已有图片则走多模态图生图优化"""
+        self._log_step("生成NPC图片")
+
+        if not state["npc_image_base64"]:
+            npc_image_base64 = await self._generate_image(state["npc_image_prompt"])
         else:
-            system_prompt = ("你是一个资深的游戏设计师,精通游戏角色档案设计.\n\n"
-                             "目标是结合世界观[worldview],模型风格[model_style]和npc背景资料[npc_relevent_lore],根据当前生成的npc档案[npc_json],输入[prompt]和反馈[feedback]完善npc档案.")
+            npc_image_base64 = await self._refine_image(
+                state["npc_image_base64"], state["npc_image_feedback"]
+            )
 
-        generate_npc_json_model = (self._model
-                                   .with_structured_output(NPCGenerationResponseStructure)
-                                   .bind(system_prompt=system_prompt))
-
-        if not has_existing:
-            response = await generate_npc_json_model.ainvoke(f"[promot]: {state["prompt"]}\n\n"
-                                                             f"[worldview]: {state["worldview"]}\n\n"
-                                                             f"[model_style]: {state["model_style"]}\n\n"
-                                                             f"[npc_relevent_lore]: {state["npc_relevent_lore"]}")
-        else:
-            response = await generate_npc_json_model.ainvoke(f"[promot]: {state["prompt"]}\n\n"
-                                                             f"[worldview]: {state["worldview"]}\n\n"
-                                                             f"[model_style]: {state["model_style"]}\n\n"
-                                                             f"[npc_relevent_lore]: {state["npc_relevent_lore"]}\n\n"
-                                                             f"[npc_json]: {state["npc_json"]}\n\n"
-                                                             f"[feedback]: {state["npc_json_feedback"]}")
-        npc_json = response.model_dump()
-
-        logger.info(f"\nNPC json档案: \n{npc_json}")
-
-        return {"npc_json": npc_json}
-
-    async def _node_generate_npc_json_evaluator(self, state: State):
-        """NPC档案评估"""
-        logger.info("\n===========================\nNPC档案评估")
-
-        system_prompt = ("你是一个资深的游戏设计师,精通游戏角色档案设计.\n\n"
-                         "目标是结合输入[prompt],世界观[worldview],模型风格[model_style]和npc背景资料[npc_relevent_lore],评判角色档案[npc_json]是否符合以下标准:\n"
-                         "\t - 必须完美符合世界观[worldview]\n"
-                         "\t - 必须完美符合模型风格[model_style]\n"
-                         "\t - 必须完美符合npc背景资料[npc_relevent_lore]\n\n"
-                         "如果不符合标准,请给出具体的修改意见.")
-        generate_npc_json_model = (self._model
-                                   .with_structured_output(EvaluatorResponseStructure)
-                                   .bind(system_prompt=system_prompt))
-
-        response = await generate_npc_json_model.ainvoke(f"[promot]: {state["prompt"]}\n\n"
-                                                         f"[worldview]: {state["worldview"]}\n\n"
-                                                         f"[model_style]: {state["model_style"]}\n\n"
-                                                         f"[npc_relevent_lore]: {state["npc_relevent_lore"]}\n\n"
-                                                         f"[npc_json]: {state["npc_json"]}")
-
-        logger.info(f"\nNPC档案评估: \n{response}")
-
-        return {"npc_json_is_ok": response.is_ok, "npc_json_feedback": response.feedback}
-
-    async def _node_generate_npc_json_human_evaluation(self, state: State):
-        """NPC档案人工评估"""
-        response = interrupt({
-            "question": "是否满意目前生成的NPC角色信息?",
-            "details": state["npc_json"]
-        })
-
-        is_ok = response["is_ok"]
-        feedback = response["feedback"]
-        logger.info(f"\n用户对npc_json的确认信息: \n{response}")
-
-        return {"npc_json_is_ok": is_ok, "npc_json_feedback": feedback}
-
-    async def _node_save_npc_json(self, state: State):
-        """保存NPC角色档案"""
-        logger.info("\n===========================\n保存NPC角色档案")
-
-        if not state["npc_json_is_ok"]:
-            return None
-
-        npc_json = state["npc_json"]
-        npc_json_path = f"{npc_json.get("name")}/{npc_json.get("name")}.json"
-        direct_path = await asyncio.to_thread(self._fs.write_json, npc_json_path, npc_json)
-
-        logger.info(f"\n保存路径: \n{direct_path}")
-
-        return {"npc_json_path": direct_path}
-
-    async def _node_generate_npc_image_prompt(self, state: State):
-        """生成用于生成NPC图片的prompt"""
-        logger.info("\n===========================\n生成用于生成NPC图片的prompt")
-
-        has_existing = bool(state["npc_image_prompt"])
-        if not has_existing:
-            system_prompt = ("你是一个精通图片生成大模型的资深的游戏设计师,精通游戏角色图片设计.\n\n"
-                             "目标是结合世界观[worldview],模型风格[model_style],npc背景资料[npc_relevent_lore]和npc档案[npc_json],生成一小段可以借助图片生成大模型来生成角色图片的**中文提示词**.")
-        else:
-            system_prompt = ("你是一个精通图片生成大模型的资深的游戏设计师,精通游戏角色图片设计.\n\n"
-                             "目标是结合世界观[worldview],模型风格[model_style],npc背景资料[npc_relevent_lore]和npc档案[npc_json],基于已经生成的用于生成角色图片的提示词[npc_image_prompt]和反馈[feedback],优化提示词[npc_image_prompt].")
-
-        generate_npc_image_prompt_model = (self._model
-                                           .with_structured_output(ImageGeneratePromptResponseStructure)
-                                           .bind(system_prompt=system_prompt))
-
-        if not has_existing:
-            response = await generate_npc_image_prompt_model.ainvoke(f"[worldview]: {state["worldview"]}\n\n"
-                                                                     f"[model_style]: {state["model_style"]}\n\n"
-                                                                     f"[npc_relevent_lore]: {state["npc_relevent_lore"]}\n\n"
-                                                                     f"[npc_json]: {state["npc_json"]}")
-        else:
-            response = await generate_npc_image_prompt_model.ainvoke(f"[worldview]: {state["worldview"]}\n\n"
-                                                                     f"[model_style]: {state["model_style"]}\n\n"
-                                                                     f"[npc_relevent_lore]: {state["npc_relevent_lore"]}\n\n"
-                                                                     f"[npc_json]: {state["npc_json"]}\n\n"
-                                                                     f"[npc_image_prompt]: {state["npc_image_prompt"]}\n\n"
-                                                                     f"[feedback]: {state["npc_image_prompt_feedback"]}")
-        npc_image_prompt = response.prompt
-
-        logger.info(f"\n生成NPC图片的prompt: \n{npc_image_prompt}")
-
-        return {"npc_image_prompt": npc_image_prompt}
-
-    async def _node_generate_npc_image_prompt_human_evaluation(self, state: State):
-        """NPC图片prompt人工评估"""
-        response = interrupt({
-            "question": "是否满意目前生成的NPC生成图片的提示词?",
-            "details": state["npc_image_prompt"]
-        })
-
-        is_ok = response["is_ok"]
-        feedback = response["feedback"]
-        logger.info(f"\n用户对npc_json的确认信息: \n{response}")
-
-        return {"npc_image_prompt_is_ok": is_ok, "npc_image_prompt_feedback": feedback}
-
-    async def _node_generate_npc_image_generator(self, state: State):
-        """生成NPC图片"""
-        logger.info("\n===========================\n生成NPC图片")
-
-        has_existing = bool(state["npc_image_base64"])
-        if not has_existing:
-            def _generate_image():
-                client = genai.Client(
-                    vertexai=True,
-                    project=self._settings.google_cloud.project,
-                    location=self._settings.google_cloud.location
-                )
-                return client.models.generate_images(
-                    model=self._settings.models.imagen_model,
-                    prompt=state["npc_image_prompt"],
-                    config={
-                        "aspect_ratio": "1:1",
-                        "output_mime_type": "image/jpeg",
-                        "number_of_images": self._settings.models.imagen_number_of_images
-                    }
-                )
-
-            response = await asyncio.to_thread(_generate_image)
-            npc_image_bytes = response.generated_images[0].image.image_bytes
-            npc_image_base64 = base64.b64encode(npc_image_bytes).decode('utf-8')
-        else:
-            self._fs.write_image("asdasdasdasdasd.jpeg", state["npc_image_base64"])
-            system_prompt = ("你是一个资深的游戏设计师,精通游戏角色图片设计.\n\n"
-                             "目标是根据当前生成的npc图片[npc_image_base64]和反馈[feedback]优化图片,图片格式为jpeg.")
-            generate_npc_image_model = (
-                self._optimize_image_model
-                .bind(system_prompt=system_prompt))
-            response = await generate_npc_image_model.ainvoke([HumanMessage(content=[
-                {
-                    "type": "text",
-                    "text": f"[feedback]: {state["npc_image_feedback"]}",
-                }, {
-                    "type": "image_url",
-                    "image_url": {"url": f"data:image/jpeg;base64,{state["npc_image_base64"]}"},
-                }
-            ])])
-            npc_image_url = response.content[0].get("image_url").get("url")
-            if "," in npc_image_url:
-                npc_image_base64 = npc_image_url.split(",")[1]
-            else:
-                npc_image_base64 = npc_image_url
-
-        logger.info(f"\n===========================\n生成NPC图片完成: {npc_image_base64[:50]}")
-
+        logger.info(f"生成NPC图片完成: {self._preview(npc_image_base64, 50)}")
         return {"npc_image_base64": npc_image_base64}
 
-    async def _node_generate_npc_image_evaluator(self, state: State):
-        """NPC图片评估"""
-        logger.info("\n===========================\nNPC图片评估")
+    async def _generate_image(self, image_prompt: str) -> str:
+        """调用 Imagen 文生图，返回 base64。"""
+        models_config = self._settings.models
+        google_cloud = self._settings.google_cloud
 
-        system_prompt = ("你是一个精通图片生成大模型的资深的游戏设计师,精通游戏角色图片设计.\n\n"
-                         "目标是结合世界观[worldview],模型风格[model_style]和npc背景资料[npc_relevent_lore],评判角色图片[npc_image_base64]是否符合以下标准:\n"
-                         "\t - 必须完美符合世界观[worldview]\n"
-                         "\t - 必须完美符合模型风格[model_style]\n"
-                         "\t - 必须完美符合npc背景资料[npc_relevent_lore]\n"
-                         "\t - 背景纯白色\n"
-                         "\t - 必须是非常标准的T-Pose,胳膊必须展开,便于之后生成3D模型\n"
-                         "\t - 必须是正面全身\n"
-                         "\t - 50%塞尔达风格+50%宫崎骏风格\n\n"
-                         "如果不符合标准,请给出具体的修改意见.")
-        generate_npc_image_evaluator_model = (self._model
-                                              .with_structured_output(EvaluatorResponseStructure)
-                                              .bind(system_prompt=system_prompt))
+        def _call_imagen():
+            client = genai.Client(
+                vertexai=True,
+                project=google_cloud.project,
+                location=google_cloud.location,
+            )
+            return client.models.generate_images(
+                model=models_config.imagen_model,
+                prompt=image_prompt,
+                config={
+                    "aspect_ratio": "1:1",
+                    "output_mime_type": f"image/{_IMAGE_MIME_SUBTYPE}",
+                    "number_of_images": models_config.imagen_number_of_images,
+                },
+            )
 
-        response = await generate_npc_image_evaluator_model.ainvoke([HumanMessage(content=[
-            {
-                "type": "text",
-                "text": f"[worldview]: {state["worldview"]}\n\n",
-            }, {
-                "type": "text",
-                "text": f"[model_style]: {state["model_style"]}\n\n",
-            }, {
-                "type": "text",
-                "text": f"[npc_relevent_lore]: {state["npc_relevent_lore"]}\n\n",
-            }, {
-                "type": "image_url",
-                "image_url": {"url": f"data:image/jpeg;base64,{state["npc_image_base64"]}"}
-            }
+        response = await asyncio.to_thread(_call_imagen)
+        return base64.b64encode(response.generated_images[0].image.image_bytes).decode("utf-8")
+
+    async def _refine_image(self, image_base64: str, feedback: str) -> str:
+        """带反馈的图生图优化，返回 base64。"""
+        model = self._optimize_image_model.bind(system_prompt=prompts.NPC_IMAGE_REFINE)
+        response = await model.ainvoke([HumanMessage(content=[
+            {"type": "text", "text": f"[feedback]: {feedback}"},
+            self._image_block(image_base64, _IMAGE_MIME_SUBTYPE),
         ])])
 
-        logger.info(f"\nNPC图片评估: \n{response}")
+        image_url = response.content[0].get("image_url").get("url")
+        return image_url.split(",", 1)[1] if "," in image_url else image_url
 
-        return {"npc_image_is_ok": response.is_ok, "npc_image_feedback": response.feedback}
+    async def _node_generate_npc_model(self, state: NpcState) -> Dict[str, Any]:
+        """生成NPC 3D模型：提交 Meshy 任务，监听进度，成功后下载 glb"""
+        self._log_step("生成NPC模型")
 
-    async def _node_generate_npc_image_human_evaluation(self, state: State):
-        """NPC图片人工评估"""
-        logger.info("\n===========================\nNPC图片人工评估")
-        response = interrupt({
-            "question": "是否满意目前生成的NPC图片信息?",
-            "details": state["npc_image_base64"]
-        })
+        image_data_uri = f"data:image/{_IMAGE_MIME_SUBTYPE};base64,{state['npc_image_base64']}"
+        task_id = self._mesh_service.create_image_to_3d_task(image_data_uri)
+        logger.info(f"3D模型生成任务ID: {task_id}")
 
-        is_ok = response["is_ok"]
-        feedback = response["feedback"]
-        logger.info(f"\n用户对npc_image_base64的确认信息: \n{response}")
+        glb_url = await self._watch_model_task(task_id)
+        if not glb_url:
+            logger.warning("3D模型未生成成功，跳过下载")
+            return {"npc_model_path": None}
 
-        return {"npc_image_is_ok": is_ok, "npc_image_feedback": feedback}
+        npc_name = state["npc_json"].get("name")
+        saved_path = await self._fs.download_file(f"{npc_name}/{npc_name}.glb", glb_url)
+        logger.info(f"\n保存路径: \n{saved_path}")
+        return {"npc_model_path": saved_path}
 
-    async def _node_save_npc_image(self, state: State):
-        """保存NPC图片"""
-        logger.info("\n===========================\n保存NPC图片")
-
-        if not state["npc_image_is_ok"]:
-            return None
-
-        npc_image_base64 = state["npc_image_base64"]
-        npc_json = state["npc_json"]
-        npc_image_path = f"{npc_json.get("name")}/{npc_json.get("name")}.jpeg"
-        direct_path = await asyncio.to_thread(self._fs.write_image, npc_image_path, npc_image_base64)
-
-        logger.info(f"\n保存路径: \n{direct_path}")
-
-        return {"npc_image_path": direct_path}
-
-    async def _node_generate_npc_model(self, state: State):
-        """生成NPC模型"""
-        logger.info("\n===========================\n生成NPC模型")
-        npc_json = state["npc_json"]
-        npc_image_base64 = f"data:image/jpeg;base64,{state['npc_image_base64']}"
-        # 开始生成模型并获取任务ID
-        task_id = self._3d_model.create_image_to_3d_task(npc_image_base64)
-        logger.info(f"\n\n\n3D模型生成任务ID: {task_id}")
-        # 根据任务ID获取生成进度
+    async def _watch_model_task(self, task_id: str) -> Optional[str]:
+        """监听 3D 模型任务进度并派发进度事件，返回成功时的 glb 下载地址。"""
         progress = 0
-        glb_url = ""
-        for update in self._3d_model.image_to_3d.listen(task_id):
-            current_progress = update.get('progress', 0)
-            status = update.get('status', 'UNKNOWN')
-            if status in ["SUCCEEDED", "FAILED", "CANCELED"]:
-                logger.info(f"\n3D模型生成状态 [STATUS] Task {status}")
-                if status == "SUCCEEDED":
-                    glb_url = update.get("model_urls").get("glb")
-                break
+        for update in self._mesh_service.image_to_3d.listen(task_id):
+            status = update.get("status", "UNKNOWN")
+            if status in TERMINAL_STATUSES:
+                logger.info(f"3D模型生成状态 [STATUS] Task {status}")
+                return update.get("model_urls", {}).get("glb") if status == "SUCCEEDED" else None
+
+            current_progress = update.get("progress", 0)
             if current_progress != progress:
                 progress = current_progress
-                logger.info(f"\n3D模型生成进度 [STATUS] Task {current_progress}%")
-                # 使用自定义事件传递进度
+                logger.info(f"3D模型生成进度 [STATUS] Task {progress}%")
+                # 通过自定义事件把进度透传给前端
                 await adispatch_custom_event(
-                    "generate_npc_model_progress",
-                    {"message": "正在生成模型", "percent": progress}
+                    MODEL_PROGRESS_EVENT,
+                    {"message": "正在生成模型", "percent": progress},
                 )
-
-        direct_path = None
-        if glb_url:
-            npc_model_path = f"{npc_json.get('name')}/{npc_json.get('name')}.glb"
-            direct_path = await self._fs.download_file(npc_model_path, glb_url)
-        logger.info(f"\n保存路径: \n{direct_path}")
-
-        return {"npc_model_path": direct_path}
+        return None
 
     # ====================
-    # Route
+    # 构建流程图
     # ====================
-    def _route_generate_npc_json(self, state: State):
-        """路由NPC档案生成"""
-        npc_json_is_ok = state["npc_json_is_ok"]
-        if not npc_json_is_ok:
-            return "Rejected"
-        return "Accepted"
+    def _build_graph(self) -> StateGraph:
+        graph = StateGraph(self.state_schema)
+        retry_policy = self.build_retry_policy()
+        saves = self._save_specs()
+        worldview_spec, model_style_spec = REFERENCE_SPECS
 
-    def _route_generate_npc_image_prompt(self, state: State):
-        """路由NPC图片prompt生成"""
-        npc_image_prompt_is_ok = state["npc_image_prompt_is_ok"]
-        if not npc_image_prompt_is_ok:
-            return "Rejected"
-        return "Accepted"
-
-    def _route_generate_npc_image(self, state: State):
-        """路由NPC档案生成"""
-        npc_image_is_ok = state["npc_image_is_ok"]
-        if not npc_image_is_ok:
-            return "Rejected"
-        return "Accepted"
-
-    # ====================
-    # Build Graph
-    # ====================
-    def _build_graph(self):
-        # 失败重试策略
-        retry_policy = RetryPolicy(
-            max_attempts=3,  # 包括第一次尝试在内的总次数
-            initial_interval=1.0,  # 第一次重试前的等待时间（秒）
-            backoff_factor=2.0,  # 每次重试等待时间的倍数
-            retry_on=(
-                ResourceExhausted,  # 429 频率限制
-                ServiceUnavailable,  # 503 服务器过载
-                ConnectionError,  # 网络掉线
-                TimeoutError  # 请求超时
-            )
+        # (节点名, 动作, 是否需要重试)
+        nodes = (
+            ("initialize", self.make_initialize_node(lambda: initial_state(self.state_schema)), False),
+            ("search_worldview", self.make_reference_node(worldview_spec), False),
+            ("search_model_style", self.make_reference_node(model_style_spec), False),
+            ("search_relevent_lore", self._node_search_relevent_lore, False),
+            ("generate_npc_json_generator", self.make_generator_node(NPC_JSON_GENERATOR_SPEC), True),
+            ("generate_npc_json_evaluator", self.make_evaluator_node(NPC_JSON_EVALUATOR_SPEC), True),
+            ("generate_npc_json_human_evaluation",
+             self.make_review_node(REVIEW_SPECS["generate_npc_json_human_evaluation"]), False),
+            ("save_npc_json", self.make_save_node(saves["save_npc_json"]), False),
+            ("generate_npc_image_prompt", self.make_generator_node(NPC_IMAGE_PROMPT_GENERATOR_SPEC), True),
+            ("generate_npc_image_prompt_human_evaluation",
+             self.make_review_node(REVIEW_SPECS["generate_npc_image_prompt_human_evaluation"]), False),
+            ("generate_npc_image_generator", self._node_generate_npc_image_generator, True),
+            ("generate_npc_image_evaluator", self.make_evaluator_node(NPC_IMAGE_EVALUATOR_SPEC), True),
+            ("generate_npc_image_human_evaluation",
+             self.make_review_node(REVIEW_SPECS["generate_npc_image_human_evaluation"]), False),
+            ("save_npc_image", self.make_save_node(saves["save_npc_image"]), False),
+            ("generate_npc_model", self._node_generate_npc_model, False),
         )
-        graph = StateGraph(State)
+        for name, action, retriable in nodes:
+            graph.add_node(name, action, **({"retry_policy": retry_policy} if retriable else {}))
 
-        # 添加节点
-        graph.add_node(node="initialize", action=self._node_initialize)
-        graph.add_node(node="search_worldview", action=self._node_search_worldview)
-        graph.add_node(node="search_model_style", action=self._node_search_model_style)
-        graph.add_node(node="search_relevent_lore", action=self._node_search_relevent_lore)
-        graph.add_node(node="generate_npc_json_generator", action=self._node_generate_npc_json_generator,
-                       retry_policy=retry_policy)
-        graph.add_node(node="generate_npc_json_evaluator", action=self._node_generate_npc_json_evaluator,
-                       retry_policy=retry_policy)
-        graph.add_node(node="generate_npc_json_human_evaluation", action=self._node_generate_npc_json_human_evaluation)
-        graph.add_node(node="save_npc_json", action=self._node_save_npc_json)
-        graph.add_node(node="generate_npc_image_prompt", action=self._node_generate_npc_image_prompt,
-                       retry_policy=retry_policy)
-        graph.add_node(node="generate_npc_image_prompt_human_evaluation",
-                       action=self._node_generate_npc_image_prompt_human_evaluation)
-        graph.add_node(node="generate_npc_image_generator", action=self._node_generate_npc_image_generator,
-                       retry_policy=retry_policy)
-        graph.add_node(node="generate_npc_image_evaluator", action=self._node_generate_npc_image_evaluator,
-                       retry_policy=retry_policy)
-        graph.add_node(node="generate_npc_image_human_evaluation",
-                       action=self._node_generate_npc_image_human_evaluation)
-        graph.add_node(node="save_npc_image", action=self._node_save_npc_image)
-        graph.add_node(node="generate_npc_model", action=self._node_generate_npc_model)
         # 线性连接
-        graph.add_edge(START, "initialize")
-        graph.add_edge("initialize", "search_worldview")
-        graph.add_edge("search_worldview", "search_model_style")
-        graph.add_edge("search_model_style", "search_relevent_lore")
-        graph.add_edge("search_relevent_lore", "generate_npc_json_generator")
-        graph.add_edge("generate_npc_json_generator", "generate_npc_json_evaluator")
-        graph.add_conditional_edges(
-            source="generate_npc_json_evaluator",
-            path=self._route_generate_npc_json,
-            path_map={
-                "Accepted": "generate_npc_json_human_evaluation",
-                "Rejected": "generate_npc_json_generator",
-            }
+        linear_edges = (
+            (START, "initialize"),
+            ("initialize", "search_worldview"),
+            ("search_worldview", "search_model_style"),
+            ("search_model_style", "search_relevent_lore"),
+            ("search_relevent_lore", "generate_npc_json_generator"),
+            ("generate_npc_json_generator", "generate_npc_json_evaluator"),
+            ("save_npc_json", "generate_npc_image_prompt"),
+            ("generate_npc_image_prompt", "generate_npc_image_prompt_human_evaluation"),
+            ("generate_npc_image_generator", "generate_npc_image_evaluator"),
+            ("save_npc_image", "generate_npc_model"),
+            ("generate_npc_model", END),
         )
-        graph.add_conditional_edges(
-            source="generate_npc_json_human_evaluation",
-            path=self._route_generate_npc_json,
-            path_map={
-                "Accepted": "save_npc_json",
-                "Rejected": "generate_npc_json_generator",
-            }
+        for source, target in linear_edges:
+            graph.add_edge(source, target)
+
+        # 条件连接：(来源节点, 判定字段, 通过去向, 驳回去向)
+        conditional_edges = (
+            ("generate_npc_json_evaluator", "npc_json_is_ok",
+             "generate_npc_json_human_evaluation", "generate_npc_json_generator"),
+            ("generate_npc_json_human_evaluation", "npc_json_is_ok",
+             "save_npc_json", "generate_npc_json_generator"),
+            ("generate_npc_image_prompt_human_evaluation", "npc_image_prompt_is_ok",
+             "generate_npc_image_generator", "generate_npc_image_prompt"),
+            ("generate_npc_image_evaluator", "npc_image_is_ok",
+             "generate_npc_image_human_evaluation", "generate_npc_image_generator"),
+            ("generate_npc_image_human_evaluation", "npc_image_is_ok",
+             "save_npc_image", "generate_npc_image_generator"),
         )
-        graph.add_edge("save_npc_json", "generate_npc_image_prompt")
-        graph.add_edge("generate_npc_image_prompt", "generate_npc_image_prompt_human_evaluation")
-        graph.add_conditional_edges(
-            source="generate_npc_image_prompt_human_evaluation",
-            path=self._route_generate_npc_image_prompt,
-            path_map={
-                "Accepted": "generate_npc_image_generator",
-                "Rejected": "generate_npc_image_prompt",
-            }
-        )
-        graph.add_edge("generate_npc_image_generator", "generate_npc_image_evaluator")
-        graph.add_conditional_edges(
-            source="generate_npc_image_evaluator",
-            path=self._route_generate_npc_image,
-            path_map={
-                "Accepted": "generate_npc_image_human_evaluation",
-                "Rejected": "generate_npc_image_generator",
-            }
-        )
-        graph.add_conditional_edges(
-            source="generate_npc_image_human_evaluation",
-            path=self._route_generate_npc_image,
-            path_map={
-                "Accepted": "save_npc_image",
-                "Rejected": "generate_npc_image_generator",
-            }
-        )
-        graph.add_edge("save_npc_image", "generate_npc_model")
-        graph.add_edge("generate_npc_model", END)
-        # 编译
-        checkpointer = MemorySaver()
-        app = graph.compile(checkpointer=checkpointer)
-        # 画图
-        # logger.info(f"\n{app.get_graph().draw_ascii()}")
-        # app.get_graph().print_ascii()
-        self._fs.write_bytes("workflows.png", app.get_graph(xray=True).draw_mermaid_png())
+        for source, flag_key, accepted, rejected in conditional_edges:
+            graph.add_conditional_edges(
+                source=source,
+                path=self.make_router(flag_key),
+                path_map={ACCEPTED: accepted, REJECTED: rejected},
+            )
 
-        return app
-
-    # ====================
-    # Run
-    # ====================
-    async def ainvoke(self, prompt: str):
-        """异步运行"""
-        return await self.app.ainvoke(input={"prompt": prompt}, config={"configurable": {"thread_id": self._thread_id}})
-
-    async def ainvoke_continue(self, resume: dict):
-        """继续异步运行"""
-        return await self.app.ainvoke(Command(resume=resume), config={"configurable": {"thread_id": self._thread_id}})
-
-    async def astream(self, prompt: str):
-        """异步流式运行"""
-        async for _ in self.app.astream(input={"prompt": prompt},
-                                        config={"configurable": {"thread_id": self._thread_id}}):
-            yield _
-
-    async def astream_continue(self, resume: dict):
-        """继续异步运行"""
-        async for _ in self.app.astream(Command(resume=resume),
-                                        config={"configurable": {"thread_id": self._thread_id}}):
-            yield _
-
-    async def astream_events(self, prompt: str):
-        """异步流式运行"""
-        async for _ in self.app.astream_events(input={"prompt": prompt},
-                                               config={"configurable": {"thread_id": self._thread_id}}):
-            kind = _.get("event")
-            if kind == "on_chat_model_stream" or kind == "on_custom_event":
-                yield _
-
-    async def astream_events_continue(self, resume: dict):
-        """继续异步运行"""
-        async for _ in self.app.astream_events(Command(resume=resume),
-                                               config={"configurable": {"thread_id": self._thread_id}}):
-            kind = _.get("event")
-            if kind == "on_chat_model_stream" or kind == "on_custom_event":
-                yield _
+        return graph
