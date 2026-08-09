@@ -20,7 +20,7 @@ def setup_logger(level: int = logging.INFO) -> None:
             },
         )
     )
-    logging.basicConfig(level=level, handlers=[handler])
+    logging.basicConfig(level=level, handlers=[handler], force=True)
 
 
 def get_logger(name: str) -> logging.Logger:

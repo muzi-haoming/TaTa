@@ -1,5 +1,5 @@
-from .index import main
+from . import index
 
 __all__ = [
-    "main",
+    "index",
 ]

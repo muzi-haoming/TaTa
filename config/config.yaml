@@ -1,33 +1,56 @@
 # embedding model configuration
 embedding_model:
-  base_url: "http://127.0.0.1:12310"
+  base_url: "http://192.168.31.107:12310"
   embed_url: "/embed"
+  drop_collection_url: "/drop_collection"
   health_url: "/health"
   dimension: 512
 
 
 
+# Rerank model configuration
+rerank_model:
+  base_url: "http://192.168.31.107:12311"
+  rerank_url: "/rerank"
+  health_url: "/health"
+
+
+
 # Milvus configuration
 milvus:
-  base_url: "http://127.0.0.1:19530"
+  base_url: "http://192.168.31.107:19530"
+  limit: 10
   
 
 
 
 # Text splitting configuration
 text_splitter:
-  chunk_size: 400
-  chunk_overlap: 50
-  separators: ["\n\n", "\n", "。", "！", "？", "；", "，", "、", ". ", "! ", "? ", "; ", ", ", " ", ""]
+  chunk_size: 300
+  chunk_overlap: 30
+  separators: ["---", "\n\n", "\n", "。", "！", "？", "；", "，", "、", ". ", "! ", "? ", "; ", ", ", " ", ""]
 
 
 
 # LLM configuration
 lite_llm:
-  base_url: "https://router.huggingface.co/v1"
-  model_name: "Qwen/Qwen3-8B"
-  model_provider: "huggingface"
-  temperature: 0.5
+  model: "gpt-5.6-luna"
+  model_provider: "openai"
+  use_responses_api: true
+  temperature: 0.7
+# lite_llm:
+#   base_url: "https://router.huggingface.co/v1"
+#   model_name: "Qwen/Qwen3-8B"
+#   model_provider: "huggingface"
+#   temperature: 0.5
+#   backend="endpoint",
+#   streaming=True,
+  
+medium_llm:
+  model: "gpt-5.6-luna"
+  model_provider: "openai"
+  use_responses_api: true
+  temperature: 0.7
 
 
 
@@ -36,3 +59,6 @@ rag:
   collection_name:
     background_info: "background_info_collection"
   bm25_index_path: "data/bm25_index.pkl"
+  bm25_top_k: 5
+  vector_top_k: 5
+  rerank_top_k: 5

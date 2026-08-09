@@ -1,5 +1,5 @@
-# from .index import main
+from .retrieval_manager import RetrievalManager
 
-# __all__ = [
-#     "main",
-# ]
+__all__ = [
+    "RetrievalManager",
+]

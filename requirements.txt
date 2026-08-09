@@ -11,7 +11,7 @@ langgraph
 loguru
 pydantic
 pydantic-settings
-streamlit
+chainlit
 google-cloud-aiplatform
 vertexai
 langchain-google-genai

@@ -6,9 +6,9 @@ from utils import get_logger
 logger = get_logger(__name__)
 
 
-class LiteLLM:
+class MediumLLM:
     def __init__(self, **overrides):
-        params = {**config["lite_llm"], **overrides}
+        params = {**config["medium_llm"], **overrides}
         self.model = init_chat_model(**params)
 
     def get_model(self):
