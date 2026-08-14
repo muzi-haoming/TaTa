@@ -13,23 +13,18 @@
       （需配置 data layer 才会持久化），无需手写 conversations 字典。
 """
 
-import asyncio
 import os
 
 import chainlit as cl
 from chainlit.data.sql_alchemy import SQLAlchemyDataLayer
+from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 
-from agent import AssistantAgent
 from db import Milvus
+from graph import build_graph
 from model import Embedding
 from utils import get_logger
 
 logger = get_logger(__name__)
-
-
-SYSTEM_PROMPT = (
-    "你是一个助手，回答我的问题。当你需要更多信息来回答问题的时候，可以借助有用的工具来帮助你获取有用的信息。"
-)
 
 # 允许渲染到前端的 LangGraph 节点名。
 # create_agent 里主模型节点叫 "model"；工具节点（含 RAG 内部的 LLM 调用）叫 "tools"。
@@ -73,15 +68,14 @@ def auth_callback(username: str, password: str) -> cl.User | None:
 # ==============================================================================
 # Agent 单例：进程级只创建一次，避免每个会话重复初始化模型客户端
 # ==============================================================================
-_agent = None
+_graph = None
 
 
-def get_assistant_agent():
-    global _agent
-    if _agent is None:
-        _agent = AssistantAgent().get_agent()
-        logger.info("========== Agent 初始化完成")
-    return _agent
+def get_graph():
+    global _graph
+    if _graph is None:
+        _graph = build_graph()
+    return _graph
 
 
 # ==============================================================================
@@ -115,11 +109,8 @@ async def set_starters() -> list[cl.Starter]:
 # ==============================================================================
 @cl.on_chat_start
 async def on_chat_start() -> None:
-    """新会话开始时触发，等价于旧版侧边栏的『新对话』按钮"""
-    # system message 只放一条，放在历史最前面
-    cl.user_session.set("messages", [{"role": "system", "content": SYSTEM_PROMPT}])
+    """新会话开始时触发"""
     logger.debug(f"========== 新会话开始: {cl.context.session.id}")
-
     # 欢迎语走 chainlit.md 的 welcome screen，不发 cl.Message，
     # 这样既能每次打开界面都看到，又不会被 data layer 持久化成一条 step
 
@@ -128,7 +119,7 @@ async def on_chat_start() -> None:
 async def on_chat_resume(thread) -> None:
     """从历史会话恢复时触发（需配置 data layer 才生效）"""
     logger.debug(f"========== thread: {thread}")
-    messages: list[dict] = [{"role": "system", "content": SYSTEM_PROMPT}]
+    messages: list[dict] = []
 
     for step in thread.get("steps", []):
         if step["type"] == "user_message":
@@ -146,45 +137,30 @@ async def on_chat_resume(thread) -> None:
 @cl.on_message
 async def on_message(message: cl.Message) -> None:
     """用户每发一条消息触发一次"""
-    messages: list[dict] = cl.user_session.get("messages") or [{"role": "system", "content": SYSTEM_PROMPT}]
-    messages.append({"role": "user", "content": message.content})
+    # messages: list[dict] = cl.user_session.get("messages") or [{"role": "system", "content": SYSTEM_PROMPT}]
+    # messages.append({"role": "user", "content": message.content})
 
     # 先送一条空消息占位，之后用 stream_token 往里灌内容
     reply = cl.Message(content="")
     await reply.send()
 
     try:
-        stream = await get_assistant_agent().astream_events(
-            {"messages": messages},
-            version="v3",
-        )
-
-        async def consume_messages():
-            async for model_msg in stream.messages:
-                if model_msg.node not in MAIN_MODEL_NODES:
-                    continue
-                async for text in model_msg.text:
-                    await reply.stream_token(text)
-
-        async def consume_tool_calls():
-            async for call in stream.tool_calls:
-                display_name = TOOL_DISPLAY_NAMES.get(call.tool_name, f"🔧 {call.tool_name}")
-                async with cl.Step(
-                    name=display_name,
-                    type="tool",
-                    parent_id=reply.id,
-                    thread_id=reply.thread_id,
-                ) as step:
-                    step.input = call.input
-                    async for delta in call.output_deltas:
-                        await step.stream_token(delta)
-                    if call.error:
-                        step.is_error = True
-                        step.output = str(call.error)
-                    else:
-                        step.output = call.output
-
-        await asyncio.gather(consume_tool_calls(), consume_messages())
+        async for chunk in get_graph().astream(
+            {"messages": [HumanMessage(content=message.content)], "route_mode": "chat"},
+            config={"configurable": {"thread_id": cl.context.session.thread_id}},
+            stream_mode="messages",
+            version="v2",
+        ):
+            if chunk["type"] == "messages":
+                message_chunk, metadata = chunk["data"]
+                if isinstance(message_chunk, ToolMessage):
+                    logger.debug(
+                        f"========== ToolMessage: 工具名称: {message_chunk.name}, 工具输出: {message_chunk.content[:100]}"
+                    )
+                if isinstance(message_chunk, AIMessage):
+                    if message_chunk.content[-1]["type"] == "text":
+                        logger.debug(f"========== AIMessage: {message_chunk.content[-1]["text"]}")
+                        await reply.stream_token(message_chunk.content[-1]["text"])
         await reply.update()
 
     except Exception as e:
@@ -193,8 +169,8 @@ async def on_message(message: cl.Message) -> None:
         await reply.update()
         return
 
-    messages.append({"role": "assistant", "content": reply.content})
-    cl.user_session.set("messages", messages)
+    # messages.append({"role": "assistant", "content": reply.content})
+    # cl.user_session.set("messages", messages)
 
 
 # ==============================================================================

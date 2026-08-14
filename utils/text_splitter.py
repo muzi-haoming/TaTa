@@ -1,10 +1,11 @@
 import logging
 import re
-
 from functools import lru_cache
-from config import config
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 from langchain_core.documents import Document
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+from config import config
 
 logger = logging.getLogger(__name__)
 
